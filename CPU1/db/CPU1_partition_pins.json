@@ -1,0 +1,73 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "led_units[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_units[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[1]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led_tens[6]",
+					"strict" : false
+				},
+				{
+					"name" : "clk",
+					"strict" : false
+				},
+				{
+					"name" : "reset",
+					"strict" : false
+				}
+			]
+		}
+	]
+}
