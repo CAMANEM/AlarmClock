@@ -7,9 +7,16 @@
 void init_timer_interrupt();
 static void timer_isr(void *context, alt_u32 id);
 
-short seconds = 0;
-volatile unsigned short *led_units = (unsigned short *) 0x3030;
-volatile unsigned short *led_tens = (unsigned short *) 0x3020;
+short seconds = 50;
+short minutes = 59;
+short hour = 24;
+volatile unsigned short *led_seconds_units = (unsigned short *) 0x3070;
+volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3060;
+volatile unsigned short *led_minutes_units = (unsigned short *) 0x3020;
+volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3050;
+volatile unsigned short *led_hour_units = (unsigned short *) 0x3040;
+volatile unsigned short *led_hour_tens = (unsigned short *) 0x3030;
+
 
 // Función para convertir segundos en el valor de LEDs
 unsigned short get_led_value(short sec) {
@@ -30,7 +37,7 @@ unsigned short get_led_value(short sec) {
         //case 13: return 0b11110010110000;
         //case 14: return 0b11110010011001;
         // Agregar más casos según sea necesario hasta 59
-        default: return 0b10000001000000; // Valor por defecto
+        default: return 0b1000000; // Valor por defecto
     }
 }
 
@@ -58,12 +65,24 @@ void init_timer_interrupt()
 static void timer_isr(void *context, alt_u32 id)
 {
     // Limpia la interrupción
-    *led_units = get_led_value(seconds % 10); // Obtiene el valor correspondiente a los LEDs
-    *led_tens = get_led_value(seconds / 10); // Obtiene el valor correspondiente a los LEDs
+    *led_seconds_units = get_led_value(seconds % 10); // Obtiene el valor correspondiente a los LEDs
+    *led_seconds_tens = get_led_value(seconds / 10); // Obtiene el valor correspondiente a los LEDs
+	*led_minutes_units = get_led_value(minutes % 10);
+	*led_minutes_tens = get_led_value(minutes / 10);
+	*led_hour_units = get_led_value(hour % 10);
+	*led_hour_tens = get_led_value(hour / 10);
 
-    alt_putstr("Second passed!\n");
+    if (seconds == 59){
 
-    // Incrementa los segundos
-    seconds = (seconds + 1) % 60; // Resetea a 0 después de 59
+    	if (minutes == 59){
+    	    	hour = (hour + 1) % 25; // Resetea a 0 después de 24  e Incrementa las horas
+    	    }
+
+    	minutes = (minutes + 1) % 60; // Resetea a 0 después de 59  e Incrementa los minutos
+    }
+
+
+    seconds = (seconds + 1) % 60; // Resetea a 0 después de 59  e Incrementa los segundos
+
     IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
 }

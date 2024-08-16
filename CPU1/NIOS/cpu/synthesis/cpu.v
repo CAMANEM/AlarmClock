@@ -4,10 +4,14 @@
 
 `timescale 1 ps / 1 ps
 module cpu (
-		input  wire       clk_clk,          //       clk.clk
-		output wire [6:0] led_tens_export,  //  led_tens.export
-		output wire [6:0] led_units_export, // led_units.export
-		input  wire       reset_reset_n     //     reset.reset_n
+		input  wire       clk_clk,                  //               clk.clk
+		output wire [6:0] led_hour_tens_export,     //     led_hour_tens.export
+		output wire [6:0] led_hour_units_export,    //    led_hour_units.export
+		output wire [6:0] led_minutes_tens_export,  //  led_minutes_tens.export
+		output wire [6:0] led_minutes_units_export, // led_minutes_units.export
+		output wire [6:0] led_seconds_tens_export,  //  led_seconds_tens.export
+		output wire [6:0] led_seconds_units_export, // led_seconds_units.export
+		input  wire       reset_reset_n             //             reset.reset_n
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
@@ -44,25 +48,45 @@ module cpu (
 	wire         mm_interconnect_0_ram_s1_write;                       // mm_interconnect_0:RAM_s1_write -> RAM:write
 	wire  [31:0] mm_interconnect_0_ram_s1_writedata;                   // mm_interconnect_0:RAM_s1_writedata -> RAM:writedata
 	wire         mm_interconnect_0_ram_s1_clken;                       // mm_interconnect_0:RAM_s1_clken -> RAM:clken
-	wire         mm_interconnect_0_led_units_s1_chipselect;            // mm_interconnect_0:LED_Units_s1_chipselect -> LED_Units:chipselect
-	wire  [31:0] mm_interconnect_0_led_units_s1_readdata;              // LED_Units:readdata -> mm_interconnect_0:LED_Units_s1_readdata
-	wire   [1:0] mm_interconnect_0_led_units_s1_address;               // mm_interconnect_0:LED_Units_s1_address -> LED_Units:address
-	wire         mm_interconnect_0_led_units_s1_write;                 // mm_interconnect_0:LED_Units_s1_write -> LED_Units:write_n
-	wire  [31:0] mm_interconnect_0_led_units_s1_writedata;             // mm_interconnect_0:LED_Units_s1_writedata -> LED_Units:writedata
+	wire         mm_interconnect_0_led_seconds_units_s1_chipselect;    // mm_interconnect_0:LED_Seconds_Units_s1_chipselect -> LED_Seconds_Units:chipselect
+	wire  [31:0] mm_interconnect_0_led_seconds_units_s1_readdata;      // LED_Seconds_Units:readdata -> mm_interconnect_0:LED_Seconds_Units_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_seconds_units_s1_address;       // mm_interconnect_0:LED_Seconds_Units_s1_address -> LED_Seconds_Units:address
+	wire         mm_interconnect_0_led_seconds_units_s1_write;         // mm_interconnect_0:LED_Seconds_Units_s1_write -> LED_Seconds_Units:write_n
+	wire  [31:0] mm_interconnect_0_led_seconds_units_s1_writedata;     // mm_interconnect_0:LED_Seconds_Units_s1_writedata -> LED_Seconds_Units:writedata
 	wire         mm_interconnect_0_timer_s1_chipselect;                // mm_interconnect_0:timer_s1_chipselect -> timer:chipselect
 	wire  [15:0] mm_interconnect_0_timer_s1_readdata;                  // timer:readdata -> mm_interconnect_0:timer_s1_readdata
 	wire   [2:0] mm_interconnect_0_timer_s1_address;                   // mm_interconnect_0:timer_s1_address -> timer:address
 	wire         mm_interconnect_0_timer_s1_write;                     // mm_interconnect_0:timer_s1_write -> timer:write_n
 	wire  [15:0] mm_interconnect_0_timer_s1_writedata;                 // mm_interconnect_0:timer_s1_writedata -> timer:writedata
-	wire         mm_interconnect_0_led_tens_s1_chipselect;             // mm_interconnect_0:LED_Tens_s1_chipselect -> LED_Tens:chipselect
-	wire  [31:0] mm_interconnect_0_led_tens_s1_readdata;               // LED_Tens:readdata -> mm_interconnect_0:LED_Tens_s1_readdata
-	wire   [1:0] mm_interconnect_0_led_tens_s1_address;                // mm_interconnect_0:LED_Tens_s1_address -> LED_Tens:address
-	wire         mm_interconnect_0_led_tens_s1_write;                  // mm_interconnect_0:LED_Tens_s1_write -> LED_Tens:write_n
-	wire  [31:0] mm_interconnect_0_led_tens_s1_writedata;              // mm_interconnect_0:LED_Tens_s1_writedata -> LED_Tens:writedata
+	wire         mm_interconnect_0_led_seconds_tens_s1_chipselect;     // mm_interconnect_0:LED_Seconds_Tens_s1_chipselect -> LED_Seconds_Tens:chipselect
+	wire  [31:0] mm_interconnect_0_led_seconds_tens_s1_readdata;       // LED_Seconds_Tens:readdata -> mm_interconnect_0:LED_Seconds_Tens_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_seconds_tens_s1_address;        // mm_interconnect_0:LED_Seconds_Tens_s1_address -> LED_Seconds_Tens:address
+	wire         mm_interconnect_0_led_seconds_tens_s1_write;          // mm_interconnect_0:LED_Seconds_Tens_s1_write -> LED_Seconds_Tens:write_n
+	wire  [31:0] mm_interconnect_0_led_seconds_tens_s1_writedata;      // mm_interconnect_0:LED_Seconds_Tens_s1_writedata -> LED_Seconds_Tens:writedata
+	wire         mm_interconnect_0_led_minutes_tens_s1_chipselect;     // mm_interconnect_0:LED_Minutes_Tens_s1_chipselect -> LED_Minutes_Tens:chipselect
+	wire  [31:0] mm_interconnect_0_led_minutes_tens_s1_readdata;       // LED_Minutes_Tens:readdata -> mm_interconnect_0:LED_Minutes_Tens_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_minutes_tens_s1_address;        // mm_interconnect_0:LED_Minutes_Tens_s1_address -> LED_Minutes_Tens:address
+	wire         mm_interconnect_0_led_minutes_tens_s1_write;          // mm_interconnect_0:LED_Minutes_Tens_s1_write -> LED_Minutes_Tens:write_n
+	wire  [31:0] mm_interconnect_0_led_minutes_tens_s1_writedata;      // mm_interconnect_0:LED_Minutes_Tens_s1_writedata -> LED_Minutes_Tens:writedata
+	wire         mm_interconnect_0_led_hour_units_s1_chipselect;       // mm_interconnect_0:LED_Hour_Units_s1_chipselect -> LED_Hour_Units:chipselect
+	wire  [31:0] mm_interconnect_0_led_hour_units_s1_readdata;         // LED_Hour_Units:readdata -> mm_interconnect_0:LED_Hour_Units_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_hour_units_s1_address;          // mm_interconnect_0:LED_Hour_Units_s1_address -> LED_Hour_Units:address
+	wire         mm_interconnect_0_led_hour_units_s1_write;            // mm_interconnect_0:LED_Hour_Units_s1_write -> LED_Hour_Units:write_n
+	wire  [31:0] mm_interconnect_0_led_hour_units_s1_writedata;        // mm_interconnect_0:LED_Hour_Units_s1_writedata -> LED_Hour_Units:writedata
+	wire         mm_interconnect_0_led_hour_tens_s1_chipselect;        // mm_interconnect_0:LED_Hour_Tens_s1_chipselect -> LED_Hour_Tens:chipselect
+	wire  [31:0] mm_interconnect_0_led_hour_tens_s1_readdata;          // LED_Hour_Tens:readdata -> mm_interconnect_0:LED_Hour_Tens_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_hour_tens_s1_address;           // mm_interconnect_0:LED_Hour_Tens_s1_address -> LED_Hour_Tens:address
+	wire         mm_interconnect_0_led_hour_tens_s1_write;             // mm_interconnect_0:LED_Hour_Tens_s1_write -> LED_Hour_Tens:write_n
+	wire  [31:0] mm_interconnect_0_led_hour_tens_s1_writedata;         // mm_interconnect_0:LED_Hour_Tens_s1_writedata -> LED_Hour_Tens:writedata
+	wire         mm_interconnect_0_led_minutes_units_s1_chipselect;    // mm_interconnect_0:LED_Minutes_Units_s1_chipselect -> LED_Minutes_Units:chipselect
+	wire  [31:0] mm_interconnect_0_led_minutes_units_s1_readdata;      // LED_Minutes_Units:readdata -> mm_interconnect_0:LED_Minutes_Units_s1_readdata
+	wire   [1:0] mm_interconnect_0_led_minutes_units_s1_address;       // mm_interconnect_0:LED_Minutes_Units_s1_address -> LED_Minutes_Units:address
+	wire         mm_interconnect_0_led_minutes_units_s1_write;         // mm_interconnect_0:LED_Minutes_Units_s1_write -> LED_Minutes_Units:write_n
+	wire  [31:0] mm_interconnect_0_led_minutes_units_s1_writedata;     // mm_interconnect_0:LED_Minutes_Units_s1_writedata -> LED_Minutes_Units:writedata
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // timer:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LED_Tens:reset_n, LED_Units:reset_n, RAM:reset, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LED_Hour_Tens:reset_n, LED_Hour_Units:reset_n, LED_Minutes_Tens:reset_n, LED_Minutes_Units:reset_n, LED_Seconds_Tens:reset_n, LED_Seconds_Units:reset_n, RAM:reset, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
 
 	cpu_CPU cpu (
@@ -107,26 +131,70 @@ module cpu (
 		.av_irq         (irq_mapper_receiver0_irq)                              //               irq.irq
 	);
 
-	cpu_LED_Tens led_tens (
-		.clk        (clk_clk),                                  //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),          //               reset.reset_n
-		.address    (mm_interconnect_0_led_tens_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_led_tens_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_led_tens_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_led_tens_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_led_tens_s1_readdata),   //                    .readdata
-		.out_port   (led_tens_export)                           // external_connection.export
+	cpu_LED_Hour_Tens led_hour_tens (
+		.clk        (clk_clk),                                       //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),               //               reset.reset_n
+		.address    (mm_interconnect_0_led_hour_tens_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_hour_tens_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_hour_tens_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_hour_tens_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_hour_tens_s1_readdata),   //                    .readdata
+		.out_port   (led_hour_tens_export)                           // external_connection.export
 	);
 
-	cpu_LED_Tens led_units (
-		.clk        (clk_clk),                                   //                 clk.clk
-		.reset_n    (~rst_controller_reset_out_reset),           //               reset.reset_n
-		.address    (mm_interconnect_0_led_units_s1_address),    //                  s1.address
-		.write_n    (~mm_interconnect_0_led_units_s1_write),     //                    .write_n
-		.writedata  (mm_interconnect_0_led_units_s1_writedata),  //                    .writedata
-		.chipselect (mm_interconnect_0_led_units_s1_chipselect), //                    .chipselect
-		.readdata   (mm_interconnect_0_led_units_s1_readdata),   //                    .readdata
-		.out_port   (led_units_export)                           // external_connection.export
+	cpu_LED_Hour_Tens led_hour_units (
+		.clk        (clk_clk),                                        //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                //               reset.reset_n
+		.address    (mm_interconnect_0_led_hour_units_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_hour_units_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_hour_units_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_hour_units_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_hour_units_s1_readdata),   //                    .readdata
+		.out_port   (led_hour_units_export)                           // external_connection.export
+	);
+
+	cpu_LED_Hour_Tens led_minutes_tens (
+		.clk        (clk_clk),                                          //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                  //               reset.reset_n
+		.address    (mm_interconnect_0_led_minutes_tens_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_minutes_tens_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_minutes_tens_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_minutes_tens_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_minutes_tens_s1_readdata),   //                    .readdata
+		.out_port   (led_minutes_tens_export)                           // external_connection.export
+	);
+
+	cpu_LED_Hour_Tens led_minutes_units (
+		.clk        (clk_clk),                                           //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
+		.address    (mm_interconnect_0_led_minutes_units_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_minutes_units_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_minutes_units_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_minutes_units_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_minutes_units_s1_readdata),   //                    .readdata
+		.out_port   (led_minutes_units_export)                           // external_connection.export
+	);
+
+	cpu_LED_Hour_Tens led_seconds_tens (
+		.clk        (clk_clk),                                          //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                  //               reset.reset_n
+		.address    (mm_interconnect_0_led_seconds_tens_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_seconds_tens_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_seconds_tens_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_seconds_tens_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_seconds_tens_s1_readdata),   //                    .readdata
+		.out_port   (led_seconds_tens_export)                           // external_connection.export
+	);
+
+	cpu_LED_Hour_Tens led_seconds_units (
+		.clk        (clk_clk),                                           //                 clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),                   //               reset.reset_n
+		.address    (mm_interconnect_0_led_seconds_units_s1_address),    //                  s1.address
+		.write_n    (~mm_interconnect_0_led_seconds_units_s1_write),     //                    .write_n
+		.writedata  (mm_interconnect_0_led_seconds_units_s1_writedata),  //                    .writedata
+		.chipselect (mm_interconnect_0_led_seconds_units_s1_chipselect), //                    .chipselect
+		.readdata   (mm_interconnect_0_led_seconds_units_s1_readdata),   //                    .readdata
+		.out_port   (led_seconds_units_export)                           // external_connection.export
 	);
 
 	cpu_RAM ram (
@@ -184,16 +252,36 @@ module cpu (
 		.JTAG_avalon_jtag_slave_writedata      (mm_interconnect_0_jtag_avalon_jtag_slave_writedata),   //                                .writedata
 		.JTAG_avalon_jtag_slave_waitrequest    (mm_interconnect_0_jtag_avalon_jtag_slave_waitrequest), //                                .waitrequest
 		.JTAG_avalon_jtag_slave_chipselect     (mm_interconnect_0_jtag_avalon_jtag_slave_chipselect),  //                                .chipselect
-		.LED_Tens_s1_address                   (mm_interconnect_0_led_tens_s1_address),                //                     LED_Tens_s1.address
-		.LED_Tens_s1_write                     (mm_interconnect_0_led_tens_s1_write),                  //                                .write
-		.LED_Tens_s1_readdata                  (mm_interconnect_0_led_tens_s1_readdata),               //                                .readdata
-		.LED_Tens_s1_writedata                 (mm_interconnect_0_led_tens_s1_writedata),              //                                .writedata
-		.LED_Tens_s1_chipselect                (mm_interconnect_0_led_tens_s1_chipselect),             //                                .chipselect
-		.LED_Units_s1_address                  (mm_interconnect_0_led_units_s1_address),               //                    LED_Units_s1.address
-		.LED_Units_s1_write                    (mm_interconnect_0_led_units_s1_write),                 //                                .write
-		.LED_Units_s1_readdata                 (mm_interconnect_0_led_units_s1_readdata),              //                                .readdata
-		.LED_Units_s1_writedata                (mm_interconnect_0_led_units_s1_writedata),             //                                .writedata
-		.LED_Units_s1_chipselect               (mm_interconnect_0_led_units_s1_chipselect),            //                                .chipselect
+		.LED_Hour_Tens_s1_address              (mm_interconnect_0_led_hour_tens_s1_address),           //                LED_Hour_Tens_s1.address
+		.LED_Hour_Tens_s1_write                (mm_interconnect_0_led_hour_tens_s1_write),             //                                .write
+		.LED_Hour_Tens_s1_readdata             (mm_interconnect_0_led_hour_tens_s1_readdata),          //                                .readdata
+		.LED_Hour_Tens_s1_writedata            (mm_interconnect_0_led_hour_tens_s1_writedata),         //                                .writedata
+		.LED_Hour_Tens_s1_chipselect           (mm_interconnect_0_led_hour_tens_s1_chipselect),        //                                .chipselect
+		.LED_Hour_Units_s1_address             (mm_interconnect_0_led_hour_units_s1_address),          //               LED_Hour_Units_s1.address
+		.LED_Hour_Units_s1_write               (mm_interconnect_0_led_hour_units_s1_write),            //                                .write
+		.LED_Hour_Units_s1_readdata            (mm_interconnect_0_led_hour_units_s1_readdata),         //                                .readdata
+		.LED_Hour_Units_s1_writedata           (mm_interconnect_0_led_hour_units_s1_writedata),        //                                .writedata
+		.LED_Hour_Units_s1_chipselect          (mm_interconnect_0_led_hour_units_s1_chipselect),       //                                .chipselect
+		.LED_Minutes_Tens_s1_address           (mm_interconnect_0_led_minutes_tens_s1_address),        //             LED_Minutes_Tens_s1.address
+		.LED_Minutes_Tens_s1_write             (mm_interconnect_0_led_minutes_tens_s1_write),          //                                .write
+		.LED_Minutes_Tens_s1_readdata          (mm_interconnect_0_led_minutes_tens_s1_readdata),       //                                .readdata
+		.LED_Minutes_Tens_s1_writedata         (mm_interconnect_0_led_minutes_tens_s1_writedata),      //                                .writedata
+		.LED_Minutes_Tens_s1_chipselect        (mm_interconnect_0_led_minutes_tens_s1_chipselect),     //                                .chipselect
+		.LED_Minutes_Units_s1_address          (mm_interconnect_0_led_minutes_units_s1_address),       //            LED_Minutes_Units_s1.address
+		.LED_Minutes_Units_s1_write            (mm_interconnect_0_led_minutes_units_s1_write),         //                                .write
+		.LED_Minutes_Units_s1_readdata         (mm_interconnect_0_led_minutes_units_s1_readdata),      //                                .readdata
+		.LED_Minutes_Units_s1_writedata        (mm_interconnect_0_led_minutes_units_s1_writedata),     //                                .writedata
+		.LED_Minutes_Units_s1_chipselect       (mm_interconnect_0_led_minutes_units_s1_chipselect),    //                                .chipselect
+		.LED_Seconds_Tens_s1_address           (mm_interconnect_0_led_seconds_tens_s1_address),        //             LED_Seconds_Tens_s1.address
+		.LED_Seconds_Tens_s1_write             (mm_interconnect_0_led_seconds_tens_s1_write),          //                                .write
+		.LED_Seconds_Tens_s1_readdata          (mm_interconnect_0_led_seconds_tens_s1_readdata),       //                                .readdata
+		.LED_Seconds_Tens_s1_writedata         (mm_interconnect_0_led_seconds_tens_s1_writedata),      //                                .writedata
+		.LED_Seconds_Tens_s1_chipselect        (mm_interconnect_0_led_seconds_tens_s1_chipselect),     //                                .chipselect
+		.LED_Seconds_Units_s1_address          (mm_interconnect_0_led_seconds_units_s1_address),       //            LED_Seconds_Units_s1.address
+		.LED_Seconds_Units_s1_write            (mm_interconnect_0_led_seconds_units_s1_write),         //                                .write
+		.LED_Seconds_Units_s1_readdata         (mm_interconnect_0_led_seconds_units_s1_readdata),      //                                .readdata
+		.LED_Seconds_Units_s1_writedata        (mm_interconnect_0_led_seconds_units_s1_writedata),     //                                .writedata
+		.LED_Seconds_Units_s1_chipselect       (mm_interconnect_0_led_seconds_units_s1_chipselect),    //                                .chipselect
 		.RAM_s1_address                        (mm_interconnect_0_ram_s1_address),                     //                          RAM_s1.address
 		.RAM_s1_write                          (mm_interconnect_0_ram_s1_write),                       //                                .write
 		.RAM_s1_readdata                       (mm_interconnect_0_ram_s1_readdata),                    //                                .readdata

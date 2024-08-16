@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2024.08.15.15:58:53
+# ACDS 18.1 625 win32 2024.08.15.20:33:13
 
 # ----------------------------------------
 # vcs - auto-generated simulation script
@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2024.08.15.15:58:53
+# ACDS 18.1 625 win32 2024.08.15.20:33:13
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="cpu"
@@ -187,7 +187,7 @@ vcs -lca -timescale=1ps/1ps -sverilog +verilog2001ext+.v -ntb_opts dtm $ELAB_OPT
   $QSYS_SIMDIR/submodules/cpu_mm_interconnect_0.v \
   $QSYS_SIMDIR/submodules/cpu_timer.v \
   $QSYS_SIMDIR/submodules/cpu_RAM.v \
-  $QSYS_SIMDIR/submodules/cpu_LED_Tens.v \
+  $QSYS_SIMDIR/submodules/cpu_LED_Hour_Tens.v \
   $QSYS_SIMDIR/submodules/cpu_JTAG.v \
   $QSYS_SIMDIR/submodules/cpu_CPU.v \
   $QSYS_SIMDIR/cpu.v \

@@ -34,7 +34,7 @@ DEFINE irq_mapper                            ./libraries/irq_mapper/
 DEFINE mm_interconnect_0                     ./libraries/mm_interconnect_0/                    
 DEFINE timer                                 ./libraries/timer/                                
 DEFINE RAM                                   ./libraries/RAM/                                  
-DEFINE LED_Tens                              ./libraries/LED_Tens/                             
+DEFINE LED_Hour_Tens                         ./libraries/LED_Hour_Tens/                        
 DEFINE JTAG                                  ./libraries/JTAG/                                 
 DEFINE CPU                                   ./libraries/CPU/                                  
 DEFINE altera_ver                            ./libraries/altera_ver/                           

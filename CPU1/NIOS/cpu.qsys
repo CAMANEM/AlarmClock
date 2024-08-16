@@ -37,19 +37,67 @@
    {
       datum baseAddress
       {
-         value = "12360";
+         value = "12424";
          type = "String";
       }
    }
-   element LED_Tens
+   element LED_Hour_Tens
    {
       datum _sortIndex
       {
-         value = "6";
+         value = "10";
          type = "int";
       }
    }
-   element LED_Tens.s1
+   element LED_Hour_Tens.s1
+   {
+      datum baseAddress
+      {
+         value = "12336";
+         type = "String";
+      }
+   }
+   element LED_Hour_Units
+   {
+      datum _sortIndex
+      {
+         value = "9";
+         type = "int";
+      }
+   }
+   element LED_Hour_Units.s1
+   {
+      datum baseAddress
+      {
+         value = "12352";
+         type = "String";
+      }
+   }
+   element LED_Minutes_Tens
+   {
+      datum _sortIndex
+      {
+         value = "8";
+         type = "int";
+      }
+   }
+   element LED_Minutes_Tens.s1
+   {
+      datum baseAddress
+      {
+         value = "12368";
+         type = "String";
+      }
+   }
+   element LED_Minutes_Units
+   {
+      datum _sortIndex
+      {
+         value = "7";
+         type = "int";
+      }
+   }
+   element LED_Minutes_Units.s1
    {
       datum baseAddress
       {
@@ -57,7 +105,23 @@
          type = "String";
       }
    }
-   element LED_Units
+   element LED_Seconds_Tens
+   {
+      datum _sortIndex
+      {
+         value = "6";
+         type = "int";
+      }
+   }
+   element LED_Seconds_Tens.s1
+   {
+      datum baseAddress
+      {
+         value = "12384";
+         type = "String";
+      }
+   }
+   element LED_Seconds_Units
    {
       datum _sortIndex
       {
@@ -65,11 +129,11 @@
          type = "int";
       }
    }
-   element LED_Units.s1
+   element LED_Seconds_Units.s1
    {
       datum baseAddress
       {
-         value = "12336";
+         value = "12400";
          type = "String";
       }
    }
@@ -136,13 +200,33 @@
  <instanceScript></instanceScript>
  <interface name="clk" internal="clk_0.clk_in" type="clock" dir="end" />
  <interface
-   name="led_tens"
-   internal="LED_Tens.external_connection"
+   name="led_hour_tens"
+   internal="LED_Hour_Tens.external_connection"
    type="conduit"
    dir="end" />
  <interface
-   name="led_units"
-   internal="LED_Units.external_connection"
+   name="led_hour_units"
+   internal="LED_Hour_Units.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="led_minutes_tens"
+   internal="LED_Minutes_Tens.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="led_minutes_units"
+   internal="LED_Minutes_Units.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="led_seconds_tens"
+   internal="LED_Seconds_Tens.external_connection"
+   type="conduit"
+   dir="end" />
+ <interface
+   name="led_seconds_units"
+   internal="LED_Seconds_Units.external_connection"
    type="conduit"
    dir="end" />
  <interface name="reset" internal="clk_0.clk_in_reset" type="reset" dir="end" />
@@ -166,7 +250,7 @@
   <parameter name="dataAddrWidth" value="14" />
   <parameter name="dataMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="dataMasterHighPerformanceMapParam" value="" />
-  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x3000' end='0x3020' type='altera_avalon_timer.s1' /><slave name='LED_Tens.s1' start='0x3020' end='0x3030' type='altera_avalon_pio.s1' /><slave name='LED_Units.s1' start='0x3030' end='0x3040' type='altera_avalon_pio.s1' /><slave name='JTAG.avalon_jtag_slave' start='0x3048' end='0x3050' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="dataSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='timer.s1' start='0x3000' end='0x3020' type='altera_avalon_timer.s1' /><slave name='LED_Minutes_Units.s1' start='0x3020' end='0x3030' type='altera_avalon_pio.s1' /><slave name='LED_Hour_Tens.s1' start='0x3030' end='0x3040' type='altera_avalon_pio.s1' /><slave name='LED_Hour_Units.s1' start='0x3040' end='0x3050' type='altera_avalon_pio.s1' /><slave name='LED_Minutes_Tens.s1' start='0x3050' end='0x3060' type='altera_avalon_pio.s1' /><slave name='LED_Seconds_Tens.s1' start='0x3060' end='0x3070' type='altera_avalon_pio.s1' /><slave name='LED_Seconds_Units.s1' start='0x3070' end='0x3080' type='altera_avalon_pio.s1' /><slave name='JTAG.avalon_jtag_slave' start='0x3088' end='0x3090' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="data_master_high_performance_paddr_base" value="0" />
   <parameter name="data_master_high_performance_paddr_size" value="0" />
   <parameter name="data_master_paddr_base" value="0" />
@@ -205,7 +289,7 @@
   <parameter name="icache_tagramBlockType" value="Automatic" />
   <parameter name="impl" value="Tiny" />
   <parameter name="instAddrWidth" value="14" />
-  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='JTAG.avalon_jtag_slave' start='0x3048' end='0x3050' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
+  <parameter name="instSlaveMapParam"><![CDATA[<address-map><slave name='RAM.s1' start='0x1000' end='0x2000' type='altera_avalon_onchip_memory2.s1' /><slave name='CPU.debug_mem_slave' start='0x2800' end='0x3000' type='altera_nios2_gen2.debug_mem_slave' /><slave name='JTAG.avalon_jtag_slave' start='0x3088' end='0x3090' type='altera_avalon_jtag_uart.avalon_jtag_slave' /></address-map>]]></parameter>
   <parameter name="instructionMasterHighPerformanceAddrWidth" value="1" />
   <parameter name="instructionMasterHighPerformanceMapParam" value="" />
   <parameter name="instruction_master_high_performance_paddr_base" value="0" />
@@ -339,7 +423,11 @@
   <parameter name="writeBufferDepth" value="64" />
   <parameter name="writeIRQThreshold" value="8" />
  </module>
- <module name="LED_Tens" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module
+   name="LED_Hour_Tens"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -353,7 +441,83 @@
   <parameter name="simDrivenValue" value="0" />
   <parameter name="width" value="7" />
  </module>
- <module name="LED_Units" kind="altera_avalon_pio" version="18.1" enabled="1">
+ <module
+   name="LED_Hour_Units"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="7" />
+ </module>
+ <module
+   name="LED_Minutes_Tens"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="7" />
+ </module>
+ <module
+   name="LED_Minutes_Units"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="7" />
+ </module>
+ <module
+   name="LED_Seconds_Tens"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
+  <parameter name="bitClearingEdgeCapReg" value="false" />
+  <parameter name="bitModifyingOutReg" value="false" />
+  <parameter name="captureEdge" value="false" />
+  <parameter name="clockRate" value="50000000" />
+  <parameter name="direction" value="Output" />
+  <parameter name="edgeType" value="RISING" />
+  <parameter name="generateIRQ" value="false" />
+  <parameter name="irqType" value="LEVEL" />
+  <parameter name="resetValue" value="0" />
+  <parameter name="simDoTestBenchWiring" value="false" />
+  <parameter name="simDrivenValue" value="0" />
+  <parameter name="width" value="7" />
+ </module>
+ <module
+   name="LED_Seconds_Units"
+   kind="altera_avalon_pio"
+   version="18.1"
+   enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
   <parameter name="bitModifyingOutReg" value="false" />
   <parameter name="captureEdge" value="false" />
@@ -423,7 +587,7 @@
    start="CPU.data_master"
    end="JTAG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3048" />
+  <parameter name="baseAddress" value="0x3088" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -444,9 +608,9 @@
    kind="avalon"
    version="18.1"
    start="CPU.data_master"
-   end="LED_Units.s1">
+   end="LED_Seconds_Units.s1">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3030" />
+  <parameter name="baseAddress" value="0x3070" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection kind="avalon" version="18.1" start="CPU.data_master" end="timer.s1">
@@ -458,7 +622,43 @@
    kind="avalon"
    version="18.1"
    start="CPU.data_master"
-   end="LED_Tens.s1">
+   end="LED_Seconds_Tens.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3060" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="CPU.data_master"
+   end="LED_Minutes_Tens.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3050" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="CPU.data_master"
+   end="LED_Hour_Units.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3040" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="CPU.data_master"
+   end="LED_Hour_Tens.s1">
+  <parameter name="arbitrationPriority" value="1" />
+  <parameter name="baseAddress" value="0x3030" />
+  <parameter name="defaultConnection" value="false" />
+ </connection>
+ <connection
+   kind="avalon"
+   version="18.1"
+   start="CPU.data_master"
+   end="LED_Minutes_Units.s1">
   <parameter name="arbitrationPriority" value="1" />
   <parameter name="baseAddress" value="0x3020" />
   <parameter name="defaultConnection" value="false" />
@@ -469,7 +669,7 @@
    start="CPU.instruction_master"
    end="JTAG.avalon_jtag_slave">
   <parameter name="arbitrationPriority" value="1" />
-  <parameter name="baseAddress" value="0x3048" />
+  <parameter name="baseAddress" value="0x3088" />
   <parameter name="defaultConnection" value="false" />
  </connection>
  <connection
@@ -492,9 +692,33 @@
  </connection>
  <connection kind="clock" version="18.1" start="clk_0.clk" end="CPU.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="JTAG.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="LED_Units.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="LED_Seconds_Units.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="timer.clk" />
- <connection kind="clock" version="18.1" start="clk_0.clk" end="LED_Tens.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="LED_Seconds_Tens.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="LED_Minutes_Units.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="LED_Minutes_Tens.clk" />
+ <connection
+   kind="clock"
+   version="18.1"
+   start="clk_0.clk"
+   end="LED_Hour_Units.clk" />
+ <connection kind="clock" version="18.1" start="clk_0.clk" end="LED_Hour_Tens.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="RAM.clk1" />
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="JTAG.irq">
   <parameter name="irqNumber" value="1" />
@@ -508,13 +732,33 @@
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="LED_Units.reset" />
+   end="LED_Seconds_Units.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="timer.reset" />
  <connection
    kind="reset"
    version="18.1"
    start="clk_0.clk_reset"
-   end="LED_Tens.reset" />
+   end="LED_Seconds_Tens.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="LED_Minutes_Units.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="LED_Minutes_Tens.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="LED_Hour_Units.reset" />
+ <connection
+   kind="reset"
+   version="18.1"
+   start="clk_0.clk_reset"
+   end="LED_Hour_Tens.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="RAM.reset1" />
  <interconnectRequirement for="$system" name="qsys_mm.clockCrossingAdapter" value="HANDSHAKE" />
  <interconnectRequirement for="$system" name="qsys_mm.enableEccProtection" value="FALSE" />

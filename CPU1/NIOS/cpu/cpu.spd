@@ -184,9 +184,9 @@
  <file path="simulation/submodules/cpu_RAM.hex" type="HEX" library="RAM" />
  <file path="simulation/submodules/cpu_RAM.v" type="VERILOG" library="RAM" />
  <file
-   path="simulation/submodules/cpu_LED_Tens.v"
+   path="simulation/submodules/cpu_LED_Hour_Tens.v"
    type="VERILOG"
-   library="LED_Tens" />
+   library="LED_Hour_Tens" />
  <file path="simulation/submodules/cpu_JTAG.v" type="VERILOG" library="JTAG" />
  <file path="simulation/submodules/cpu_CPU.v" type="VERILOG" library="CPU" />
  <file path="simulation/cpu.v" type="VERILOG" />
