@@ -181,6 +181,10 @@
    path="simulation/submodules/cpu_timer.v"
    type="VERILOG"
    library="timer" />
+ <file
+   path="simulation/submodules/cpu_SW_States.v"
+   type="VERILOG"
+   library="SW_States" />
  <file path="simulation/submodules/cpu_RAM.hex" type="HEX" library="RAM" />
  <file path="simulation/submodules/cpu_RAM.v" type="VERILOG" library="RAM" />
  <file
@@ -189,6 +193,10 @@
    library="LED_Hour_Tens" />
  <file path="simulation/submodules/cpu_JTAG.v" type="VERILOG" library="JTAG" />
  <file path="simulation/submodules/cpu_CPU.v" type="VERILOG" library="CPU" />
+ <file
+   path="simulation/submodules/cpu_BTN_Edit.v"
+   type="VERILOG"
+   library="BTN_Edit" />
  <file path="simulation/cpu.v" type="VERILOG" />
  <topLevel name="cpu" />
  <deviceFamily name="cyclonev" />

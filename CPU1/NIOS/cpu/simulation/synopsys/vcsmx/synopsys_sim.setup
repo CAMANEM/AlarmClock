@@ -26,10 +26,12 @@ rst_controller:                        ./libraries/rst_controller/
 irq_mapper:                            ./libraries/irq_mapper/                           
 mm_interconnect_0:                     ./libraries/mm_interconnect_0/                    
 timer:                                 ./libraries/timer/                                
+SW_States:                             ./libraries/SW_States/                            
 RAM:                                   ./libraries/RAM/                                  
 LED_Hour_Tens:                         ./libraries/LED_Hour_Tens/                        
 JTAG:                                  ./libraries/JTAG/                                 
 CPU:                                   ./libraries/CPU/                                  
+BTN_Edit:                              ./libraries/BTN_Edit/                             
 altera_ver:                            ./libraries/altera_ver/                           
 lpm_ver:                               ./libraries/lpm_ver/                              
 sgate_ver:                             ./libraries/sgate_ver/                            

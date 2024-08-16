@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>15/08/2024 09:45:22 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1723783522814</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>15/08/2024 11:09:09 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1723788549533</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\caman\Documents\Repos\AlarmClock\CPU1\NIOS\software\AlarmClock_bsp</BspGeneratedLocation>
         <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\cpu.sopcinfo</SopcDesignFile>
@@ -911,44 +911,56 @@
                 <attributes>timer</attributes>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Minutes_Units</slaveDescriptor>
+                <slaveDescriptor>SW_States</slaveDescriptor>
                 <addressRange>0x00003020 - 0x0000302F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Hour_Tens</slaveDescriptor>
+                <slaveDescriptor>BTN_Edit</slaveDescriptor>
                 <addressRange>0x00003030 - 0x0000303F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Hour_Units</slaveDescriptor>
+                <slaveDescriptor>LED_Minutes_Units</slaveDescriptor>
                 <addressRange>0x00003040 - 0x0000304F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Minutes_Tens</slaveDescriptor>
+                <slaveDescriptor>LED_Hour_Tens</slaveDescriptor>
                 <addressRange>0x00003050 - 0x0000305F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Seconds_Tens</slaveDescriptor>
+                <slaveDescriptor>LED_Hour_Units</slaveDescriptor>
                 <addressRange>0x00003060 - 0x0000306F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
-                <slaveDescriptor>LED_Seconds_Units</slaveDescriptor>
+                <slaveDescriptor>LED_Minutes_Tens</slaveDescriptor>
                 <addressRange>0x00003070 - 0x0000307F</addressRange>
                 <addressSpan>16</addressSpan>
                 <attributes/>
         </MemoryMap>
         <MemoryMap>
+                <slaveDescriptor>LED_Seconds_Tens</slaveDescriptor>
+                <addressRange>0x00003080 - 0x0000308F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
+                <slaveDescriptor>LED_Seconds_Units</slaveDescriptor>
+                <addressRange>0x00003090 - 0x0000309F</addressRange>
+                <addressSpan>16</addressSpan>
+                <attributes/>
+        </MemoryMap>
+        <MemoryMap>
                 <slaveDescriptor>JTAG</slaveDescriptor>
-                <addressRange>0x00003088 - 0x0000308F</addressRange>
+                <addressRange>0x000030A8 - 0x000030AF</addressRange>
                 <addressSpan>8</addressSpan>
                 <attributes>printable</attributes>
         </MemoryMap>

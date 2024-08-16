@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2024.08.15.20:33:13
+# ACDS 18.1 625 win32 2024.08.15.22:54:31
 
 # ----------------------------------------
 # ncsim - auto-generated simulation script
@@ -106,7 +106,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2024.08.15.20:33:13
+# ACDS 18.1 625 win32 2024.08.15.22:54:31
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="cpu"
@@ -170,10 +170,12 @@ mkdir -p ./libraries/rst_controller/
 mkdir -p ./libraries/irq_mapper/
 mkdir -p ./libraries/mm_interconnect_0/
 mkdir -p ./libraries/timer/
+mkdir -p ./libraries/SW_States/
 mkdir -p ./libraries/RAM/
 mkdir -p ./libraries/LED_Hour_Tens/
 mkdir -p ./libraries/JTAG/
 mkdir -p ./libraries/CPU/
+mkdir -p ./libraries/BTN_Edit/
 mkdir -p ./libraries/altera_ver/
 mkdir -p ./libraries/lpm_ver/
 mkdir -p ./libraries/sgate_ver/
@@ -252,10 +254,12 @@ if [ $SKIP_COM -eq 0 ]; then
   ncvlog -sv $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS "$QSYS_SIMDIR/submodules/cpu_irq_mapper.sv"                                          -work irq_mapper                            -cdslib ./cds_libs/irq_mapper.cds.lib                           
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_mm_interconnect_0.v"                                    -work mm_interconnect_0                     -cdslib ./cds_libs/mm_interconnect_0.cds.lib                    
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_timer.v"                                                -work timer                                 -cdslib ./cds_libs/timer.cds.lib                                
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_SW_States.v"                                            -work SW_States                             -cdslib ./cds_libs/SW_States.cds.lib                            
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_RAM.v"                                                  -work RAM                                   -cdslib ./cds_libs/RAM.cds.lib                                  
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_LED_Hour_Tens.v"                                        -work LED_Hour_Tens                         -cdslib ./cds_libs/LED_Hour_Tens.cds.lib                        
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_JTAG.v"                                                 -work JTAG                                  -cdslib ./cds_libs/JTAG.cds.lib                                 
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_CPU.v"                                                  -work CPU                                   -cdslib ./cds_libs/CPU.cds.lib                                  
+  ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_BTN_Edit.v"                                             -work BTN_Edit                              -cdslib ./cds_libs/BTN_Edit.cds.lib                             
   ncvlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/cpu.v"                                                                                                                                                                             
 fi
 

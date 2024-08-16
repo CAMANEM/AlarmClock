@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'cpu'
  * SOPC Builder design path: ../../cpu.sopcinfo
  *
- * Generated: Thu Aug 15 21:45:23 PDT 2024
+ * Generated: Thu Aug 15 23:09:09 PDT 2024
  */
 
 /*
@@ -53,6 +53,33 @@
 
 /* Include definitions from linker script generator */
 #include "linker.h"
+
+
+/*
+ * BTN_Edit configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_BTN_Edit altera_avalon_pio
+#define BTN_EDIT_BASE 0x3030
+#define BTN_EDIT_BIT_CLEARING_EDGE_REGISTER 0
+#define BTN_EDIT_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define BTN_EDIT_CAPTURE 0
+#define BTN_EDIT_DATA_WIDTH 2
+#define BTN_EDIT_DO_TEST_BENCH_WIRING 0
+#define BTN_EDIT_DRIVEN_SIM_VALUE 0
+#define BTN_EDIT_EDGE_TYPE "NONE"
+#define BTN_EDIT_FREQ 50000000
+#define BTN_EDIT_HAS_IN 1
+#define BTN_EDIT_HAS_OUT 0
+#define BTN_EDIT_HAS_TRI 0
+#define BTN_EDIT_IRQ -1
+#define BTN_EDIT_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define BTN_EDIT_IRQ_TYPE "NONE"
+#define BTN_EDIT_NAME "/dev/BTN_Edit"
+#define BTN_EDIT_RESET_VALUE 0
+#define BTN_EDIT_SPAN 16
+#define BTN_EDIT_TYPE "altera_avalon_pio"
 
 
 /*
@@ -146,7 +173,7 @@
  */
 
 #define ALT_MODULE_CLASS_JTAG altera_avalon_jtag_uart
-#define JTAG_BASE 0x3088
+#define JTAG_BASE 0x30a8
 #define JTAG_IRQ 1
 #define JTAG_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_NAME "/dev/JTAG"
@@ -164,7 +191,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Hour_Tens altera_avalon_pio
-#define LED_HOUR_TENS_BASE 0x3030
+#define LED_HOUR_TENS_BASE 0x3050
 #define LED_HOUR_TENS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_HOUR_TENS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_HOUR_TENS_CAPTURE 0
@@ -191,7 +218,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Hour_Units altera_avalon_pio
-#define LED_HOUR_UNITS_BASE 0x3040
+#define LED_HOUR_UNITS_BASE 0x3060
 #define LED_HOUR_UNITS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_HOUR_UNITS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_HOUR_UNITS_CAPTURE 0
@@ -218,7 +245,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Minutes_Tens altera_avalon_pio
-#define LED_MINUTES_TENS_BASE 0x3050
+#define LED_MINUTES_TENS_BASE 0x3070
 #define LED_MINUTES_TENS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_MINUTES_TENS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_MINUTES_TENS_CAPTURE 0
@@ -245,7 +272,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Minutes_Units altera_avalon_pio
-#define LED_MINUTES_UNITS_BASE 0x3020
+#define LED_MINUTES_UNITS_BASE 0x3040
 #define LED_MINUTES_UNITS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_MINUTES_UNITS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_MINUTES_UNITS_CAPTURE 0
@@ -272,7 +299,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Seconds_Tens altera_avalon_pio
-#define LED_SECONDS_TENS_BASE 0x3060
+#define LED_SECONDS_TENS_BASE 0x3080
 #define LED_SECONDS_TENS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_SECONDS_TENS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_SECONDS_TENS_CAPTURE 0
@@ -299,7 +326,7 @@
  */
 
 #define ALT_MODULE_CLASS_LED_Seconds_Units altera_avalon_pio
-#define LED_SECONDS_UNITS_BASE 0x3070
+#define LED_SECONDS_UNITS_BASE 0x3090
 #define LED_SECONDS_UNITS_BIT_CLEARING_EDGE_REGISTER 0
 #define LED_SECONDS_UNITS_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define LED_SECONDS_UNITS_CAPTURE 0
@@ -350,6 +377,33 @@
 
 
 /*
+ * SW_States configuration
+ *
+ */
+
+#define ALT_MODULE_CLASS_SW_States altera_avalon_pio
+#define SW_STATES_BASE 0x3020
+#define SW_STATES_BIT_CLEARING_EDGE_REGISTER 0
+#define SW_STATES_BIT_MODIFYING_OUTPUT_REGISTER 0
+#define SW_STATES_CAPTURE 0
+#define SW_STATES_DATA_WIDTH 3
+#define SW_STATES_DO_TEST_BENCH_WIRING 0
+#define SW_STATES_DRIVEN_SIM_VALUE 0
+#define SW_STATES_EDGE_TYPE "NONE"
+#define SW_STATES_FREQ 50000000
+#define SW_STATES_HAS_IN 1
+#define SW_STATES_HAS_OUT 0
+#define SW_STATES_HAS_TRI 0
+#define SW_STATES_IRQ -1
+#define SW_STATES_IRQ_INTERRUPT_CONTROLLER_ID -1
+#define SW_STATES_IRQ_TYPE "NONE"
+#define SW_STATES_NAME "/dev/SW_States"
+#define SW_STATES_RESET_VALUE 0
+#define SW_STATES_SPAN 16
+#define SW_STATES_TYPE "altera_avalon_pio"
+
+
+/*
  * System configuration
  *
  */
@@ -365,19 +419,19 @@
 #define ALT_NUM_INTERNAL_INTERRUPT_CONTROLLERS 1
 #define ALT_NUM_INTERRUPT_CONTROLLERS 1
 #define ALT_STDERR "/dev/JTAG"
-#define ALT_STDERR_BASE 0x3088
+#define ALT_STDERR_BASE 0x30a8
 #define ALT_STDERR_DEV JTAG
 #define ALT_STDERR_IS_JTAG_UART
 #define ALT_STDERR_PRESENT
 #define ALT_STDERR_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDIN "/dev/JTAG"
-#define ALT_STDIN_BASE 0x3088
+#define ALT_STDIN_BASE 0x30a8
 #define ALT_STDIN_DEV JTAG
 #define ALT_STDIN_IS_JTAG_UART
 #define ALT_STDIN_PRESENT
 #define ALT_STDIN_TYPE "altera_avalon_jtag_uart"
 #define ALT_STDOUT "/dev/JTAG"
-#define ALT_STDOUT_BASE 0x3088
+#define ALT_STDOUT_BASE 0x30a8
 #define ALT_STDOUT_DEV JTAG
 #define ALT_STDOUT_IS_JTAG_UART
 #define ALT_STDOUT_PRESENT

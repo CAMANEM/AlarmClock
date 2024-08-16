@@ -176,6 +176,26 @@
 					"strict" : false
 				},
 				{
+					"name" : "btn_edit[0]",
+					"strict" : false
+				},
+				{
+					"name" : "sw_states[0]",
+					"strict" : false
+				},
+				{
+					"name" : "btn_edit[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sw_states[1]",
+					"strict" : false
+				},
+				{
+					"name" : "sw_states[2]",
+					"strict" : false
+				},
+				{
 					"name" : "reset",
 					"strict" : false
 				}

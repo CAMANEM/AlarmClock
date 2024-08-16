@@ -4,6 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module cpu (
+		input  wire [1:0] btn_edit_export,          //          btn_edit.export
 		input  wire       clk_clk,                  //               clk.clk
 		output wire [6:0] led_hour_tens_export,     //     led_hour_tens.export
 		output wire [6:0] led_hour_units_export,    //    led_hour_units.export
@@ -11,7 +12,8 @@ module cpu (
 		output wire [6:0] led_minutes_units_export, // led_minutes_units.export
 		output wire [6:0] led_seconds_tens_export,  //  led_seconds_tens.export
 		output wire [6:0] led_seconds_units_export, // led_seconds_units.export
-		input  wire       reset_reset_n             //             reset.reset_n
+		input  wire       reset_reset_n,            //             reset.reset_n
+		input  wire [2:0] sw_states_export          //         sw_states.export
 	);
 
 	wire  [31:0] cpu_data_master_readdata;                             // mm_interconnect_0:CPU_data_master_readdata -> CPU:d_readdata
@@ -83,11 +85,23 @@ module cpu (
 	wire   [1:0] mm_interconnect_0_led_minutes_units_s1_address;       // mm_interconnect_0:LED_Minutes_Units_s1_address -> LED_Minutes_Units:address
 	wire         mm_interconnect_0_led_minutes_units_s1_write;         // mm_interconnect_0:LED_Minutes_Units_s1_write -> LED_Minutes_Units:write_n
 	wire  [31:0] mm_interconnect_0_led_minutes_units_s1_writedata;     // mm_interconnect_0:LED_Minutes_Units_s1_writedata -> LED_Minutes_Units:writedata
+	wire  [31:0] mm_interconnect_0_btn_edit_s1_readdata;               // BTN_Edit:readdata -> mm_interconnect_0:BTN_Edit_s1_readdata
+	wire   [1:0] mm_interconnect_0_btn_edit_s1_address;                // mm_interconnect_0:BTN_Edit_s1_address -> BTN_Edit:address
+	wire  [31:0] mm_interconnect_0_sw_states_s1_readdata;              // SW_States:readdata -> mm_interconnect_0:SW_States_s1_readdata
+	wire   [1:0] mm_interconnect_0_sw_states_s1_address;               // mm_interconnect_0:SW_States_s1_address -> SW_States:address
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // timer:irq -> irq_mapper:receiver1_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [CPU:reset_n, JTAG:rst_n, LED_Hour_Tens:reset_n, LED_Hour_Units:reset_n, LED_Minutes_Tens:reset_n, LED_Minutes_Units:reset_n, LED_Seconds_Tens:reset_n, LED_Seconds_Units:reset_n, RAM:reset, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [BTN_Edit:reset_n, CPU:reset_n, JTAG:rst_n, LED_Hour_Tens:reset_n, LED_Hour_Units:reset_n, LED_Minutes_Tens:reset_n, LED_Minutes_Units:reset_n, LED_Seconds_Tens:reset_n, LED_Seconds_Units:reset_n, RAM:reset, SW_States:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
+
+	cpu_BTN_Edit btn_edit (
+		.clk      (clk_clk),                                //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),        //               reset.reset_n
+		.address  (mm_interconnect_0_btn_edit_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_btn_edit_s1_readdata), //                    .readdata
+		.in_port  (btn_edit_export)                         // external_connection.export
+	);
 
 	cpu_CPU cpu (
 		.clk                                 (clk_clk),                                           //                       clk.clk
@@ -211,6 +225,14 @@ module cpu (
 		.freeze     (1'b0)                                 // (terminated)
 	);
 
+	cpu_SW_States sw_states (
+		.clk      (clk_clk),                                 //                 clk.clk
+		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
+		.address  (mm_interconnect_0_sw_states_s1_address),  //                  s1.address
+		.readdata (mm_interconnect_0_sw_states_s1_readdata), //                    .readdata
+		.in_port  (sw_states_export)                         // external_connection.export
+	);
+
 	cpu_timer timer (
 		.clk        (clk_clk),                               //   clk.clk
 		.reset_n    (~rst_controller_reset_out_reset),       // reset.reset_n
@@ -237,6 +259,8 @@ module cpu (
 		.CPU_instruction_master_waitrequest    (cpu_instruction_master_waitrequest),                   //                                .waitrequest
 		.CPU_instruction_master_read           (cpu_instruction_master_read),                          //                                .read
 		.CPU_instruction_master_readdata       (cpu_instruction_master_readdata),                      //                                .readdata
+		.BTN_Edit_s1_address                   (mm_interconnect_0_btn_edit_s1_address),                //                     BTN_Edit_s1.address
+		.BTN_Edit_s1_readdata                  (mm_interconnect_0_btn_edit_s1_readdata),               //                                .readdata
 		.CPU_debug_mem_slave_address           (mm_interconnect_0_cpu_debug_mem_slave_address),        //             CPU_debug_mem_slave.address
 		.CPU_debug_mem_slave_write             (mm_interconnect_0_cpu_debug_mem_slave_write),          //                                .write
 		.CPU_debug_mem_slave_read              (mm_interconnect_0_cpu_debug_mem_slave_read),           //                                .read
@@ -289,6 +313,8 @@ module cpu (
 		.RAM_s1_byteenable                     (mm_interconnect_0_ram_s1_byteenable),                  //                                .byteenable
 		.RAM_s1_chipselect                     (mm_interconnect_0_ram_s1_chipselect),                  //                                .chipselect
 		.RAM_s1_clken                          (mm_interconnect_0_ram_s1_clken),                       //                                .clken
+		.SW_States_s1_address                  (mm_interconnect_0_sw_states_s1_address),               //                    SW_States_s1.address
+		.SW_States_s1_readdata                 (mm_interconnect_0_sw_states_s1_readdata),              //                                .readdata
 		.timer_s1_address                      (mm_interconnect_0_timer_s1_address),                   //                        timer_s1.address
 		.timer_s1_write                        (mm_interconnect_0_timer_s1_write),                     //                                .write
 		.timer_s1_readdata                     (mm_interconnect_0_timer_s1_readdata),                  //                                .readdata

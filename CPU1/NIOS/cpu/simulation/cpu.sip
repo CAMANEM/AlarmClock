@@ -32,6 +32,7 @@ set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(s
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/altera_merlin_master_translator.sv"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_timer.v"]
+set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_SW_States.v"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_RAM.hex"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_RAM.v"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_LED_Hour_Tens.v"]
@@ -53,3 +54,4 @@ set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(s
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_rf_ram_b.hex"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_rf_ram_b.mif"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_test_bench.v"]
+set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_BTN_Edit.v"]
