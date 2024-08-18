@@ -6,6 +6,19 @@
 #include "altera_avalon_pio_regs.h"
 #include "io.h" // Necesario para IORD y IOWR
 
+int clkTime = 235950; // hora de reloj en formato HHMMSS
+int alarmTime = 0; // hora de alarma en formato HHMMSS
+short select = 0; // seleccion de ajuste 0: segundos, 1: minutos, 2: hora
+
+volatile unsigned short *led_seconds_units = (unsigned short *) 0x3090;
+volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3080;
+volatile unsigned short *led_minutes_units = (unsigned short *) 0x3040;
+volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3070;
+volatile unsigned short *led_hour_units = (unsigned short *) 0x3060;
+volatile unsigned short *led_hour_tens = (unsigned short *) 0x3050;
+volatile unsigned short *btn_state = (unsigned short *) 0x3030;
+volatile unsigned short *sw_state = (unsigned short *) 0x3020;
+
 void init_timer_interrupt();
 static void timer_isr(void *context, alt_u32 id);
 short switch1_true();
@@ -15,19 +28,13 @@ void setTime();
 void checkSelect();
 short increaseTime();
 
-
-short seconds = 0;
-short minutes = 0;
-short hour = 0;
-short select = 0;
-volatile unsigned short *led_seconds_units = (unsigned short *) 0x3090;
-volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3080;
-volatile unsigned short *led_minutes_units = (unsigned short *) 0x3040;
-volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3070;
-volatile unsigned short *led_hour_units = (unsigned short *) 0x3060;
-volatile unsigned short *led_hour_tens = (unsigned short *) 0x3050;
-volatile unsigned short *btn_state = (unsigned short *) 0x3030;
-volatile unsigned short *sw_state = (unsigned short *) 0x3020;
+int getHour(int *time);
+int getMinutes(int *time);
+int getSeconds(int *time);
+void increaseHour(int *time);
+void increaseMinutes(int *time);
+void increaseSeconds(int *time);
+void displayTime(int *time);
 
 // Función para convertir segundos en el valor de LEDs
 unsigned short get_led_value(short sec) {
@@ -70,30 +77,29 @@ void init_timer_interrupt()
 
 static void timer_isr(void *context, alt_u32 id)
 {
-	*led_seconds_units = get_led_value(seconds % 10); // Obtiene el valor correspondiente a los LEDs
-	*led_seconds_tens = get_led_value(seconds / 10); // Obtiene el valor correspondiente a los LEDs
-	*led_minutes_units = get_led_value(minutes % 10);
-	*led_minutes_tens = get_led_value(minutes / 10);
-	*led_hour_units = get_led_value(hour % 10);
-	*led_hour_tens = get_led_value(hour / 10);
+
+	displayTime(&clkTime);
 
 	if (switch1_true())
 	{
 		setTime();
 	}
-	else{
-		if (seconds == 59)
-		{
-			if (minutes == 59)
-			{
-				hour = (hour + 1) % 24; // Resetea a 0 después de 23  e Incrementa las horas
-			}
-			minutes = (minutes + 1) % 60; // Resetea a 0 después de 59  e Incrementa los minutos
-		}
-		seconds = (seconds + 1) % 60; // Resetea a 0 después de 59  e Incrementa los segundos
+	else
+	{
+		increaseSeconds(&clkTime);
 	}
 	// Limpia la interrupción
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
+}
+
+void displayTime(int *time)
+{
+	*led_seconds_units = get_led_value(getSeconds(time) % 10); // Obtiene el valor correspondiente a los LEDs
+	*led_seconds_tens = get_led_value(getSeconds(time) / 10); // Obtiene el valor correspondiente a los LEDs
+	*led_minutes_units = get_led_value(getMinutes(time) % 10);
+	*led_minutes_tens = get_led_value(getMinutes(time) / 10);
+	*led_hour_units = get_led_value(getHour(time) % 10);
+	*led_hour_tens = get_led_value(getHour(time) / 10);
 }
 
 // Switch1 esta activado y está en modo cambio de hora
@@ -133,7 +139,6 @@ void checkSelect()
     if (next)
     {
     	select = (select + 1) % 3;
-    	alt_printf("El valor de los select es: %d\n", select);
     }
 }
 
@@ -146,13 +151,13 @@ void setTime()
 		switch (select)
 		{
 		        case 0:
-		        	seconds = (seconds + 1) % 60;
+		        	increaseSeconds(&clkTime);
 		        	break;
 		        case 1:
-		        	minutes = (minutes + 1) % 60;
+		        	increaseMinutes(&clkTime);
 		        	break;
 		        case 2:
-		        	hour = (hour + 1) % 24;
+		        	increaseHour(&clkTime);
 		        	break;
 		}
 	}
@@ -161,6 +166,64 @@ void setTime()
 void setAlarm()
 {
 
+}
+
+
+int getHour(int *time) {
+    return *time / 10000;
+}
+
+// Función para obtener los minutos de un entero en formato HHMMSS
+int getMinutes(int *time) {
+    return (*time / 100) % 100;
+}
+
+// Función para obtener los segundos de un entero en formato HHMMSS
+int getSeconds(int *time) {
+    return *time % 100;
+}
+
+// Función para establecer la hora en un entero en formato HHMMSS
+// aumenta solo la hora en +1 hasta un maximo de 23
+// y despues de 23 reinicia en 0
+void increaseHour(int *time) {
+    *time = (*time % 10000) + ((getHour(time) + 1) % 24) * 10000; // (getHour(time) + 1) % 24): aumenta el tiempo en +1 hasta 23. Luego reinicia a 00
+}
+
+// Función para establecer los minutos en un entero en formato HHMMSS
+void increaseMinutes(int *time) {
+	// config mode: only affects time minutes
+	if (switch1_true())
+	{
+		*time = (*time / 10000) * 10000 + ((getMinutes(time) + 1) % 60 * 100) + getSeconds(time);
+	}
+	// normal hour. increase minutes could affect hour
+	else
+	{
+		if (getMinutes(time) == 59)
+		{
+			increaseHour(time);
+		}
+		*time = (*time / 10000) * 10000 + ((getMinutes(time) + 1) % 60 * 100) + getSeconds(time);
+	}
+}
+
+// Función para establecer los segundos en un entero en formato HHMMSS
+void increaseSeconds(int *time) {
+	// config mode: only affects time seconds
+	if (switch1_true())
+	{
+		*time = (*time / 100) * 100 + ((getSeconds(time) + 1) % 60);
+	}
+	// normal clock mode that could affect minutes
+	else
+	{
+		if (getSeconds(time) == 59)
+		{
+			increaseMinutes(time);
+		}
+		*time = (*time / 100) * 100 + ((getSeconds(time) + 1) % 60);
+	}
 }
 
 
