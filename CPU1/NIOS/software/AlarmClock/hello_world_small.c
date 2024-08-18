@@ -5,10 +5,12 @@
 #include "altera_avalon_timer_regs.h"
 #include "altera_avalon_pio_regs.h"
 #include "io.h" // Necesario para IORD y IOWR
+#include <stdbool.h>
 
 int clkTime = 235950; // hora de reloj en formato HHMMSS
 int alarmTime = 0; // hora de alarma en formato HHMMSS
 short select = 0; // seleccion de ajuste 0: segundos, 1: minutos, 2: hora
+bool ringing = false;
 
 volatile unsigned short *led_seconds_units = (unsigned short *) 0x3090;
 volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3080;
@@ -21,12 +23,16 @@ volatile unsigned short *sw_state = (unsigned short *) 0x3020;
 
 void init_timer_interrupt();
 static void timer_isr(void *context, alt_u32 id);
-short switch1_true();
+short switch0();
+short switch1();
+short alarmOn();
+
 //short btn1_true();
-void setAlarm();
-void setTime();
+void clkController();
+void normalMode();
+void configMode(int *time);
 void checkSelect();
-short increaseTime();
+short increaseTimeBtn();
 
 int getHour(int *time);
 int getMinutes(int *time);
@@ -78,18 +84,28 @@ void init_timer_interrupt()
 static void timer_isr(void *context, alt_u32 id)
 {
 
-	displayTime(&clkTime);
-
-	if (switch1_true())
-	{
-		setTime();
-	}
-	else
-	{
-		increaseSeconds(&clkTime);
-	}
+	clkController();
 	// Limpia la interrupción
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
+}
+
+void clkController()
+{
+	// modo confuguracion de hora
+	if (switch0())
+	{
+		displayTime(&clkTime);
+		configMode(&clkTime);
+	}
+	else if (switch1()) // modo congiguracion de alarma
+	{
+		displayTime(&alarmTime);
+		configMode(&alarmTime);
+	}
+	else // modo reloj normal
+	{
+		normalMode();
+	}
 }
 
 void displayTime(int *time)
@@ -102,14 +118,60 @@ void displayTime(int *time)
 	*led_hour_tens = get_led_value(getHour(time) / 10);
 }
 
+
+void normalMode()
+{
+	displayTime(&clkTime);
+	increaseSeconds(&clkTime);
+
+	if (ringing && alarmOn())
+	{
+		// continua sonando
+		alt_putstr("The alarm is ringing!\n");
+	}
+	else if (ringing && !alarmOn())
+	{
+		// se ha desactivado la alarma
+		ringing = false;
+		alt_putstr("The alarm has been turned off!\n");
+	}
+	else if (alarmOn() && ((clkTime / 100) == (alarmTime / 100)))
+	{
+		// Se activó la alarma!!
+		ringing = true;
+		alt_putstr("The alarm has been turned ON!\n");
+	}
+}
+
 // Switch1 esta activado y está en modo cambio de hora
-short switch1_true()
+short switch0()
 {
     unsigned short switch_value = IORD(sw_state, 0);
 
     return (switch_value & 0x1) ? 1 : 0;
 
 }
+
+// Switch1 esta activado y está en modo cambio de hora de alarma
+short switch1()
+{
+	unsigned short switch_value = IORD(sw_state, 0);
+	unsigned short switch1_value = (switch_value >> 1) & 0x1; // Segundo switch (bit 1)
+
+	return switch1_value;
+
+}
+
+// Switch2 esta activado y se desea activar o desactivar la alarma
+short alarmOn()
+{
+    unsigned short switch_value = IORD(sw_state, 0);
+    unsigned short switch2_value = (switch_value >> 2) & 0x1; // Tercer switch (bit 2)
+
+	return switch2_value;
+
+}
+
 
 /*
 short btn1_true()
@@ -122,7 +184,7 @@ short btn1_true()
 */
 
 // ocurre cuando el boton derecho (KEY0) ha sido presionando. Valida que se pueda aumentar la hora si el boton esta presionado
-short increaseTime()
+short increaseTimeBtn()
 {
     unsigned short button_value = IORD(btn_state, 0);
 
@@ -143,30 +205,28 @@ void checkSelect()
 }
 
 // modo de configuracion de hora, permite cambiar la hora
-void setTime()
+void configMode(int *time)
 {
-	if (increaseTime())
+	checkSelect();
+
+	if (increaseTimeBtn())
 	{
-		checkSelect();
 		switch (select)
 		{
 		        case 0:
-		        	increaseSeconds(&clkTime);
+		        	increaseSeconds(time);
 		        	break;
 		        case 1:
-		        	increaseMinutes(&clkTime);
+		        	increaseMinutes(time);
 		        	break;
 		        case 2:
-		        	increaseHour(&clkTime);
+		        	increaseHour(time);
 		        	break;
 		}
 	}
 }
 
-void setAlarm()
-{
 
-}
 
 
 int getHour(int *time) {
@@ -193,7 +253,7 @@ void increaseHour(int *time) {
 // Función para establecer los minutos en un entero en formato HHMMSS
 void increaseMinutes(int *time) {
 	// config mode: only affects time minutes
-	if (switch1_true())
+	if (switch0())
 	{
 		*time = (*time / 10000) * 10000 + ((getMinutes(time) + 1) % 60 * 100) + getSeconds(time);
 	}
@@ -211,7 +271,7 @@ void increaseMinutes(int *time) {
 // Función para establecer los segundos en un entero en formato HHMMSS
 void increaseSeconds(int *time) {
 	// config mode: only affects time seconds
-	if (switch1_true())
+	if (switch0())
 	{
 		*time = (*time / 100) * 100 + ((getSeconds(time) + 1) % 60);
 	}
