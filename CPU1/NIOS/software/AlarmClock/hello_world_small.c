@@ -12,14 +12,15 @@ int alarmTime = 0; // hora de alarma en formato HHMMSS
 short select = 0; // seleccion de ajuste 0: segundos, 1: minutos, 2: hora
 bool ringing = false;
 
-volatile unsigned short *led_seconds_units = (unsigned short *) 0x3090;
-volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3080;
-volatile unsigned short *led_minutes_units = (unsigned short *) 0x3040;
-volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3070;
-volatile unsigned short *led_hour_units = (unsigned short *) 0x3060;
-volatile unsigned short *led_hour_tens = (unsigned short *) 0x3050;
-volatile unsigned short *btn_state = (unsigned short *) 0x3030;
-volatile unsigned short *sw_state = (unsigned short *) 0x3020;
+volatile unsigned short *led_seconds_units = (unsigned short *) 0x30a0;
+volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3090;
+volatile unsigned short *led_minutes_units = (unsigned short *) 0x3050;
+volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3080;
+volatile unsigned short *led_hour_units = (unsigned short *) 0x3070;
+volatile unsigned short *led_hour_tens = (unsigned short *) 0x3060;
+volatile unsigned short *sw_state = (unsigned short *) 0x3030;
+volatile unsigned short *btn_state = (unsigned short *) 0x3040;
+volatile unsigned short *buzzer = (unsigned short *) 0x3020;
 
 void init_timer_interrupt();
 static void timer_isr(void *context, alt_u32 id);
@@ -61,8 +62,9 @@ unsigned short get_led_value(short sec) {
 
 int main()
 { 
-    alt_putstr("Hello from Nios II!\n");
+    alt_putstr("Program initialized successfully \n");
     init_timer_interrupt();
+    *buzzer = 0; // se asegura de que la alarma inicie estando apagada
 	while (1) {
 		// Aquí podría ir otro código si fuera necesario
 	}
@@ -124,21 +126,18 @@ void normalMode()
 	displayTime(&clkTime);
 	increaseSeconds(&clkTime);
 
-	if (ringing && alarmOn())
-	{
-		// continua sonando
-		alt_putstr("The alarm is ringing!\n");
-	}
-	else if (ringing && !alarmOn())
+	if (ringing && !alarmOn())
 	{
 		// se ha desactivado la alarma
 		ringing = false;
+		*buzzer = 0;
 		alt_putstr("The alarm has been turned off!\n");
 	}
 	else if (alarmOn() && ((clkTime / 100) == (alarmTime / 100)))
 	{
 		// Se activó la alarma!!
 		ringing = true;
+		*buzzer = 1;
 		alt_putstr("The alarm has been turned ON!\n");
 	}
 }

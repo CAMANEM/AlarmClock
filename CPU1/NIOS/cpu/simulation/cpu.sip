@@ -54,4 +54,5 @@ set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(s
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_rf_ram_b.hex"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_rf_ram_b.mif"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_CPU_cpu_test_bench.v"]
+set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_Buzzer.v"]
 set_global_assignment -library "lib_cpu" -name MISC_FILE [file join $::quartus(sip_path) "submodules/cpu_BTN_Edit.v"]

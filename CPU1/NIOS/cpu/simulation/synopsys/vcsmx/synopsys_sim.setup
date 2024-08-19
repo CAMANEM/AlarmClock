@@ -31,6 +31,7 @@ RAM:                                   ./libraries/RAM/
 LED_Hour_Tens:                         ./libraries/LED_Hour_Tens/                        
 JTAG:                                  ./libraries/JTAG/                                 
 CPU:                                   ./libraries/CPU/                                  
+Buzzer:                                ./libraries/Buzzer/                               
 BTN_Edit:                              ./libraries/BTN_Edit/                             
 altera_ver:                            ./libraries/altera_ver/                           
 lpm_ver:                               ./libraries/lpm_ver/                              

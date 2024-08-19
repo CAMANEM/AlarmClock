@@ -172,6 +172,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "buzzer",
+					"strict" : false
+				},
+				{
 					"name" : "clk",
 					"strict" : false
 				},

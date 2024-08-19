@@ -94,7 +94,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2024.08.15.22:54:31
+# ACDS 18.1 625 win32 2024.08.18.15:04:47
 
 # ----------------------------------------
 # Initialize variables
@@ -236,6 +236,8 @@ ensure_lib                                       ./libraries/JTAG/
 vmap       JTAG                                  ./libraries/JTAG/                                 
 ensure_lib                                       ./libraries/CPU/                                  
 vmap       CPU                                   ./libraries/CPU/                                  
+ensure_lib                                       ./libraries/Buzzer/                               
+vmap       Buzzer                                ./libraries/Buzzer/                               
 ensure_lib                                       ./libraries/BTN_Edit/                             
 vmap       BTN_Edit                              ./libraries/BTN_Edit/                             
 
@@ -302,6 +304,7 @@ alias com {
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_LED_Hour_Tens.v"                                        -work LED_Hour_Tens                        
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_JTAG.v"                                                 -work JTAG                                 
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_CPU.v"                                                  -work CPU                                  
+  eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_Buzzer.v"                                               -work Buzzer                               
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/submodules/cpu_BTN_Edit.v"                                             -work BTN_Edit                             
   eval  vlog $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS     "$QSYS_SIMDIR/cpu.v"                                                                                                            
 }
@@ -310,14 +313,14 @@ alias com {
 # Elaborate top level design
 alias elab {
   echo "\[exec\] elab"
-  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L timer -L SW_States -L RAM -L LED_Hour_Tens -L JTAG -L CPU -L BTN_Edit -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L timer -L SW_States -L RAM -L LED_Hour_Tens -L JTAG -L CPU -L Buzzer -L BTN_Edit -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------
 # Elaborate the top level design with novopt option
 alias elab_debug {
   echo "\[exec\] elab_debug"
-  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L timer -L SW_States -L RAM -L LED_Hour_Tens -L JTAG -L CPU -L BTN_Edit -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
+  eval vsim -novopt -t ps $ELAB_OPTIONS $USER_DEFINED_ELAB_OPTIONS -L work -L work_lib -L error_adapter_0 -L avalon_st_adapter -L rsp_mux_001 -L rsp_mux -L rsp_demux_003 -L rsp_demux -L cmd_mux_003 -L cmd_mux -L cmd_demux_001 -L cmd_demux -L router_005 -L router_002 -L router_001 -L router -L JTAG_avalon_jtag_slave_agent_rsp_fifo -L JTAG_avalon_jtag_slave_agent -L CPU_data_master_agent -L JTAG_avalon_jtag_slave_translator -L CPU_data_master_translator -L cpu -L rst_controller -L irq_mapper -L mm_interconnect_0 -L timer -L SW_States -L RAM -L LED_Hour_Tens -L JTAG -L CPU -L Buzzer -L BTN_Edit -L altera_ver -L lpm_ver -L sgate_ver -L altera_mf_ver -L altera_lnsim_ver -L cyclonev_ver -L cyclonev_hssi_ver -L cyclonev_pcie_hip_ver $TOP_LEVEL_NAME
 }
 
 # ----------------------------------------

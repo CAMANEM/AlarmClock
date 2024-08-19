@@ -1,4 +1,4 @@
-!SESSION 2024-08-15 23:07:15.002 -----------------------------------------------
+!SESSION 2024-08-18 18:10:02.554 -----------------------------------------------
 eclipse.buildId=4.5.2.M20160212-1500
 java.version=1.8.0_05
 java.vendor=Oracle Corporation
@@ -6,7 +6,7 @@ BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
 Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
 
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-08-15 23:07:24.362
+!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-08-18 18:10:12.069
 !MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
 !STACK 0
 com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
@@ -25,677 +25,143 @@ Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING
 	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
 	... 9 more
 
-!ENTRY org.eclipse.cdt.core 1 0 2024-08-15 23:09:14.173
-!MESSAGE Indexed 'AlarmClock_bsp' (82 sources, 154 headers) in 3,13 sec: 5.562 declarations; 8.622 references; 31 unresolved inclusions; 3 syntax errors; 63 unresolved names (0,44 %)
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-18 18:10:57.294
+!MESSAGE Indexed 'AlarmClock_bsp' (82 sources, 62 headers) in 1,61 sec: 1.207 declarations; 2.587 references; 113 unresolved inclusions; 6 syntax errors; 191 unresolved names (4,8 %)
 
-!ENTRY org.eclipse.cdt.core 1 0 2024-08-15 23:09:15.559
-!MESSAGE Indexed 'AlarmClock' (1 sources, 0 headers) in 0,007 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
+!ENTRY org.eclipse.cdt.core 1 0 2024-08-18 18:10:59.742
+!MESSAGE Indexed 'AlarmClock' (1 sources, 0 headers) in 0,013 sec: 1 declarations; 1 references; 1 unresolved inclusions; 0 syntax errors; 0 unresolved names (0 %)
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:32:17.537
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:11:45.704
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:32:19.478
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:11:47.748
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:36:44.099
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:36:46.120
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:37:05.182
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:36.791
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:37:05.762
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:37.469
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:37:07.761
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:39.487
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:40:37.432
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:40:39.454
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:50:09.983
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:50:12.023
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:52:22.849
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-15 23:52:24.978
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:00:50.756
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:00:52.782
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:01:14.922
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:52.562
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:01:15.567
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:53.202
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:01:17.744
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:13:55.329
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:03:23.805
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:15:33.059
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:03:24.384
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:15:33.747
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:03:26.443
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:15:35.995
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:08:30.030
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:16:18.173
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:08:30.708
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:16:18.801
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:08:32.818
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:16:20.973
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:09:09.357
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:17:26.466
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:09:09.984
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:17:27.067
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:09:12.079
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:17:29.260
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:10:45.042
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:06.616
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:10:45.666
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:07.374
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:10:47.620
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:09.398
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:11:16.419
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:20.857
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:11:16.985
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:21.499
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:11:18.864
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:18:23.717
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:31:06.424
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:20:54.159
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:31:07.121
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:20:54.773
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:31:09.361
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:20:56.840
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:46:03.926
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:08.809
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:46:04.613
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:09.445
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:46:06.876
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:11.578
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:47:57.849
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:30.530
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:47:58.420
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:31.175
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:48:00.663
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:21:33.388
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:49:03.621
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:32.925
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:49:04.286
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:33.583
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:49:06.426
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:35.760
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:50:04.892
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:47.851
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:50:05.599
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:48.523
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 00:50:07.777
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:23:50.758
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:01:14.290
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:24:07.688
 !MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:01:14.967
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:24:08.260
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:01:16.911
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:24:10.334
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:09:27.772
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:09:28.417
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:24:33.031
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:09:30.639
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:24:35.128
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:38:56.364
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:38:57.071
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:26:03.506
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
 
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 01:38:59.068
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:26:21.975
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:26:22.627
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:26:24.854
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:27:43.902
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:27:44.536
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:27:46.681
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:32:30.726
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:32:31.330
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:32:33.490
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:34:29.785
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:34:30.461
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:34:32.664
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:35:26.315
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:35:26.935
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:35:29.437
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:37:39.285
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:37:39.924
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:37:42.071
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-!SESSION 2024-08-16 03:44:04.336 -----------------------------------------------
-eclipse.buildId=4.5.2.M20160212-1500
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY org.eclipse.core.resources 2 10035 2024-08-16 03:44:08.685
-!MESSAGE The workspace exited with unsaved changes in the previous session; refreshing workspace to recover changes.
-
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-08-16 03:44:28.117
-!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
-!STACK 0
-com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
-	at com.google.gson.Gson.fromJson(Gson.java:803)
-	at com.google.gson.Gson.fromJson(Gson.java:768)
-	at com.google.gson.Gson.fromJson(Gson.java:717)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
-	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
-	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
-	... 9 more
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:51:46.201
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:51:48.174
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:52:07.385
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:52:08.010
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:52:10.016
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:54:40.675
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:54:41.387
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:54:43.442
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:23.314
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:23.922
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:26.018
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:39.176
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:39.779
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:41.914
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:56:59.932
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:57:00.510
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:57:02.675
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:57:28.574
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 03:57:30.594
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:03:12.668
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:03:13.243
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:03:15.359
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:04.107
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:04.784
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:06.972
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:20.198
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:20.826
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:23.024
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:48.298
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:09:50.398
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:21:23.675
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:21:24.281
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:21:27.077
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:21:27.405
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:21:30.414
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --go, /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:21:30.421
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:22:11.979
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:14.618
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:22:14.937
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:18.031
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --go, /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:18.032
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:22:36.969
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:39.679
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --stop] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:22:40.001
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:43.160
-!MESSAGE Failed Executing: [nios2-download, '--cable=DE-SoC on localhost [USB-1]', --device=2, --instance=0, --go, /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf] return code: 4, 'other error'
-
-!ENTRY com.altera.sbtgui.launch 4 0 2024-08-16 04:22:43.161
-!MESSAGE Downloading ELF Process failed
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:23:53.593
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:23:55.733
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:27:46.797
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:27:47.384
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:27:49.443
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:28:24.368
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:28:24.916
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-16 04:28:26.981
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-!SESSION 2024-08-17 15:48:19.548 -----------------------------------------------
-eclipse.buildId=4.5.2.M20160212-1500
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-08-17 15:48:41.960
-!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
-!STACK 0
-com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
-	at com.google.gson.Gson.fromJson(Gson.java:803)
-	at com.google.gson.Gson.fromJson(Gson.java:768)
-	at com.google.gson.Gson.fromJson(Gson.java:717)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
-	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
-	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
-	... 9 more
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 15:49:33.991
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 15:49:36.020
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 18:11:22.732
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 18:11:24.928
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 18:11:56.121
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 18:11:56.720
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 18:11:59.022
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:21.300
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:21.906
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:23.923
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:37.981
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:38.612
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:46:40.842
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:59:43.127
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:59:43.802
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-17 23:59:45.915
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:28.111
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:28.776
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:30.830
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:42.674
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:43.290
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:01:45.410
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:02:14.275
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:02:16.467
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:03:20.113
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:03:20.794
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:03:22.842
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:04:42.445
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:04:43.073
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:04:45.166
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:16.569
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:17.244
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:19.468
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:56.416
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:57.082
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:05:59.252
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:50:46.229
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:50:46.912
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 00:50:48.831
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-!SESSION 2024-08-18 00:59:55.045 -----------------------------------------------
-eclipse.buildId=4.5.2.M20160212-1500
-java.version=1.8.0_05
-java.vendor=Oracle Corporation
-BootLoader constants: OS=win32, ARCH=x86_64, WS=win32, NL=en_US
-Framework arguments:  -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-Command-line arguments:  -os win32 -ws win32 -arch x86_64 -product org.eclipse.epp.package.cpp.product -pluginCustomization C:/intelfpga_lite/18.1/nios2eds/bin/eclipse_nios2/plugin_customization.ini
-
-!ENTRY org.eclipse.epp.logging.aeri.ide 2 16 2024-08-18 01:00:10.045
-!MESSAGE Server ‘org.eclipse.epp.logging.aeri.ide.server’ failed with exception: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1. ; version: 1.100.0.v20160217-0435
-!STACK 0
-com.google.gson.JsonSyntaxException: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:176)
-	at com.google.gson.Gson.fromJson(Gson.java:803)
-	at com.google.gson.Gson.fromJson(Gson.java:768)
-	at com.google.gson.Gson.fromJson(Gson.java:717)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.json.Json.deserialize(Json.java:88)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.IO.refreshConfiguration(IO.java:70)
-	at org.eclipse.epp.internal.logging.aeri.ide.server.mars.ServerConnection.startUp(ServerConnection.java:101)
-	at com.google.common.util.concurrent.AbstractIdleService$2$1.run(AbstractIdleService.java:54)
-	at com.google.common.util.concurrent.Callables$3.run(Callables.java:93)
-	at java.lang.Thread.run(Unknown Source)
-Caused by: java.lang.IllegalStateException: Expected BEGIN_OBJECT but was STRING at line 1 column 1
-	at com.google.gson.stream.JsonReader.beginObject(JsonReader.java:374)
-	at com.google.gson.internal.bind.ReflectiveTypeAdapterFactory$Adapter.read(ReflectiveTypeAdapterFactory.java:165)
-	... 9 more
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:03:32.581
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:03:34.606
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:28:40.703
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:28:41.346
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:28:43.400
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:41:49.295
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:41:50.024
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:41:52.207
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:11.211
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:11.939
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:14.250
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:44.752
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:45.431
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 01:45:47.546
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:30:05.080
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:30:07.170
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:32:19.980
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:32:20.604
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:32:22.704
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:29.974
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:30.614
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:32.697
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:47.130
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:47.822
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:46:50.106
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:47:10.726
-!MESSAGE Terminated Launch with connection: 20DE-SoC on localhost [USB-1]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:47:11.341
-!MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --stop]
-
-!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 02:47:13.280
+!ENTRY com.altera.sbtgui.launch 1 0 2024-08-18 18:26:05.602
 !MESSAGE Executing: [C:/intelfpga_lite/18.1/quartus\bin64\cygwin\bin\bash.exe, -c, nios2-download '--cable=DE-SoC on localhost [USB-1]' --device=2 --instance=0 --go /cygdrive/c/Users/caman/Documents/Repos/AlarmClock/CPU1/NIOS/software/AlarmClock/AlarmClock.elf]

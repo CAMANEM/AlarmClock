@@ -1,6 +1,6 @@
 <sld_project_info>
   <project>
-    <hash md5_digest_80b="04702fa71ae583738952"/>
+    <hash md5_digest_80b="a328b0858cc476c608f5"/>
   </project>
   <file_info>
     <file device="5CSEMA5F31C6" path="CPU1.sof" usercode="0xFFFFFFFF"/>
@@ -139,7 +139,7 @@
   <sld_infos>
     <sld_info hpath="cpu:u0" name="u0">
       <assignment_values>
-        <assignment_value text="QSYS_NAME cpu HAS_SOPCINFO 1 GENERATION_ID 1723787673"/>
+        <assignment_value text="QSYS_NAME cpu HAS_SOPCINFO 1 GENERATION_ID 1724018690"/>
       </assignment_values>
       <parameters/>
     </sld_info>

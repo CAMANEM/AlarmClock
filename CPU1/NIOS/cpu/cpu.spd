@@ -194,6 +194,10 @@
  <file path="simulation/submodules/cpu_JTAG.v" type="VERILOG" library="JTAG" />
  <file path="simulation/submodules/cpu_CPU.v" type="VERILOG" library="CPU" />
  <file
+   path="simulation/submodules/cpu_Buzzer.v"
+   type="VERILOG"
+   library="Buzzer" />
+ <file
    path="simulation/submodules/cpu_BTN_Edit.v"
    type="VERILOG"
    library="BTN_Edit" />
