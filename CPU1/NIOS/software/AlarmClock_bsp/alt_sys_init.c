@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'cpu'
  * SOPC Builder design path: ../../cpu.sopcinfo
  *
- * Generated: Sun Aug 18 18:10:54 PDT 2024
+ * Generated: Sun Aug 25 19:17:38 PDT 2024
  */
 
 /*
@@ -68,6 +68,7 @@
 
 ALTERA_NIOS2_GEN2_IRQ_INSTANCE ( CPU, CPU);
 ALTERA_AVALON_JTAG_UART_INSTANCE ( JTAG, JTAG);
+ALTERA_AVALON_TIMER_INSTANCE ( INPUT_TIMER, Input_Timer);
 ALTERA_AVALON_TIMER_INSTANCE ( TIMER, timer);
 
 /*
@@ -91,6 +92,7 @@ void alt_irq_init ( const void* base )
 
 void alt_sys_init( void )
 {
+    ALTERA_AVALON_TIMER_INIT ( INPUT_TIMER, Input_Timer);
     ALTERA_AVALON_TIMER_INIT ( TIMER, timer);
     ALTERA_AVALON_JTAG_UART_INIT ( JTAG, JTAG);
 }

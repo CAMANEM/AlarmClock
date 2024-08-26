@@ -12,18 +12,20 @@ int alarmTime = 0; // hora de alarma en formato HHMMSS
 short select = 0; // seleccion de ajuste 0: segundos, 1: minutos, 2: hora
 bool ringing = false;
 
-volatile unsigned short *led_seconds_units = (unsigned short *) 0x30a0;
-volatile unsigned short *led_seconds_tens = (unsigned short *) 0x3090;
-volatile unsigned short *led_minutes_units = (unsigned short *) 0x3050;
-volatile unsigned short *led_minutes_tens = (unsigned short *) 0x3080;
-volatile unsigned short *led_hour_units = (unsigned short *) 0x3070;
-volatile unsigned short *led_hour_tens = (unsigned short *) 0x3060;
-volatile unsigned short *sw_state = (unsigned short *) 0x3030;
-volatile unsigned short *btn_state = (unsigned short *) 0x3040;
-volatile unsigned short *buzzer = (unsigned short *) 0x3020;
+volatile unsigned short *led_seconds_units = (unsigned short *) 0x30c0;
+volatile unsigned short *led_seconds_tens = (unsigned short *) 0x30b0;
+volatile unsigned short *led_minutes_units = (unsigned short *) 0x3070;
+volatile unsigned short *led_minutes_tens = (unsigned short *) 0x30a0;
+volatile unsigned short *led_hour_units = (unsigned short *) 0x3090;
+volatile unsigned short *led_hour_tens = (unsigned short *) 0x3080;
+volatile unsigned short *sw_state = (unsigned short *) 0x3050;
+volatile unsigned short *btn_state = (unsigned short *) 0x3060;
+volatile unsigned short *buzzer = (unsigned short *) 0x3040;
 
-void init_timer_interrupt();
+void initTimerInterrupt();
+void initInputTimerInterrupt();
 static void timer_isr(void *context, alt_u32 id);
+static void inputTimerIsr(void *context, alt_u32 id);
 short switch0();
 short switch1();
 short alarmOn();
@@ -63,7 +65,8 @@ unsigned short get_led_value(short sec) {
 int main()
 { 
     alt_putstr("Program initialized successfully \n");
-    init_timer_interrupt();
+    initTimerInterrupt();
+    initInputTimerInterrupt();
     *buzzer = 0; // se asegura de que la alarma inicie estando apagada
 	while (1) {
 		// Aquí podría ir otro código si fuera necesario
@@ -72,7 +75,8 @@ int main()
     return 0;
 }
 
-void init_timer_interrupt()
+// Inicializa interrupciones cada segundo para el avance del reloj
+void initTimerInterrupt()
 {
     // Registra la ISR con HAL
     alt_ic_isr_register(TIMER_IRQ_INTERRUPT_CONTROLLER_ID, TIMER_IRQ, (void *)timer_isr, NULL, 0x0);
@@ -83,14 +87,34 @@ void init_timer_interrupt()
             | ALTERA_AVALON_TIMER_CONTROL_ITO_MSK);
 }
 
+// Inicializa las interrupciones cada 200 ms que controlan los inputs
+void initInputTimerInterrupt(){
+	// Registra la ISR con HAL
+	    alt_ic_isr_register(INPUT_TIMER_IRQ_INTERRUPT_CONTROLLER_ID, INPUT_TIMER_IRQ, (void *)inputTimerIsr, NULL, 0x0);
+
+	    // Inicia el temporizador
+	    IOWR_ALTERA_AVALON_TIMER_CONTROL(INPUT_TIMER_BASE, ALTERA_AVALON_TIMER_CONTROL_CONT_MSK
+	            | ALTERA_AVALON_TIMER_CONTROL_START_MSK
+	            | ALTERA_AVALON_TIMER_CONTROL_ITO_MSK);
+}
+
+// Interrupcion que ocurre cada 1 segundo y controla el reloj modo normal
 static void timer_isr(void *context, alt_u32 id)
 {
-
-	clkController();
+    normalMode();
 	// Limpia la interrupción
 	IOWR_ALTERA_AVALON_TIMER_STATUS(TIMER_BASE, 0);
 }
 
+
+// Interrupcion que ocurre cada 2 ms y controla los inputs
+static void inputTimerIsr(void *context, alt_u32 id){
+	clkController();
+	// Limpia la interrupción
+	IOWR_ALTERA_AVALON_TIMER_STATUS(INPUT_TIMER_BASE, 0);
+}
+
+// Controla el ingreso de inputs y los modos de ajuste de hora y alarma
 void clkController()
 {
 	// modo confuguracion de hora
@@ -104,12 +128,11 @@ void clkController()
 		displayTime(&alarmTime);
 		configMode(&alarmTime);
 	}
-	else // modo reloj normal
-	{
-		normalMode();
-	}
+
 }
 
+
+// Muestra la hora indicada en los LEDs
 void displayTime(int *time)
 {
 	*led_seconds_units = get_led_value(getSeconds(time) % 10); // Obtiene el valor correspondiente a los LEDs
@@ -120,25 +143,28 @@ void displayTime(int *time)
 	*led_hour_tens = get_led_value(getHour(time) / 10);
 }
 
-
+// Controla el avance del reloj,
+// visualización de hora y deteccion de hora de alarma
 void normalMode()
 {
-	displayTime(&clkTime);
-	increaseSeconds(&clkTime);
+	if (!switch0() && !switch1()){
+		increaseSeconds(&clkTime);
+		displayTime(&clkTime);
 
-	if (ringing && !alarmOn())
-	{
-		// se ha desactivado la alarma
-		ringing = false;
-		*buzzer = 0;
-		alt_putstr("The alarm has been turned off!\n");
-	}
-	else if (alarmOn() && ((clkTime / 100) == (alarmTime / 100)))
-	{
-		// Se activó la alarma!!
-		ringing = true;
-		*buzzer = 1;
-		alt_putstr("The alarm has been turned ON!\n");
+		if (ringing && !alarmOn())
+		{
+			// se ha desactivado la alarma
+			ringing = false;
+			*buzzer = 0;
+			//alt_putstr("The alarm has been turned off!\n");
+		}
+		else if (alarmOn() && ((clkTime / 100) == (alarmTime / 100)))
+		{
+			// Se activó la alarma!!
+			ringing = true;
+			*buzzer = 1;
+			//alt_putstr("The alarm has been turned ON!\n");
+		}
 	}
 }
 

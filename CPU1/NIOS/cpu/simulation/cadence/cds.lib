@@ -37,6 +37,7 @@ DEFINE SW_States                             ./libraries/SW_States/
 DEFINE RAM                                   ./libraries/RAM/                                  
 DEFINE LED_Hour_Tens                         ./libraries/LED_Hour_Tens/                        
 DEFINE JTAG                                  ./libraries/JTAG/                                 
+DEFINE Input_Timer                           ./libraries/Input_Timer/                          
 DEFINE CPU                                   ./libraries/CPU/                                  
 DEFINE Buzzer                                ./libraries/Buzzer/                               
 DEFINE BTN_Edit                              ./libraries/BTN_Edit/                             

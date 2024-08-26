@@ -123,7 +123,7 @@ refer to the applicable agreement for further details.
 		(text "reset_n" (rect 181 427 404 864)(font "Arial" (color 0 0 0)))
 		(text "sw_states" (rect 116 443 286 899)(font "Arial" (color 128 0 0)(font_size 9)))
 		(text "export" (rect 181 467 398 944)(font "Arial" (color 0 0 0)))
-		(text " cpu " (rect 398 488 826 986)(font "Arial" ))
+		(text " system " (rect 381 488 810 986)(font "Arial" ))
 		(line (pt 176 32)(pt 240 32)(line_width 1))
 		(line (pt 240 32)(pt 240 488)(line_width 1))
 		(line (pt 176 488)(pt 240 488)(line_width 1))

@@ -12,7 +12,7 @@
 # or its authorized distributors. Please refer to the applicable 
 # agreement for further details.
 
-# ACDS 18.1 625 win32 2024.08.18.15:04:47
+# ACDS 18.1 625 win32 2024.08.25.18:59:24
 
 # ----------------------------------------
 # vcsmx - auto-generated simulation script
@@ -107,7 +107,7 @@
 # within the Quartus project, and generate a unified
 # script which supports all the Altera IP within the design.
 # ----------------------------------------
-# ACDS 18.1 625 win32 2024.08.18.15:04:47
+# ACDS 18.1 625 win32 2024.08.25.18:59:24
 # ----------------------------------------
 # initialize variables
 TOP_LEVEL_NAME="cpu"
@@ -175,6 +175,7 @@ mkdir -p ./libraries/SW_States/
 mkdir -p ./libraries/RAM/
 mkdir -p ./libraries/LED_Hour_Tens/
 mkdir -p ./libraries/JTAG/
+mkdir -p ./libraries/Input_Timer/
 mkdir -p ./libraries/CPU/
 mkdir -p ./libraries/Buzzer/
 mkdir -p ./libraries/BTN_Edit/
@@ -260,6 +261,7 @@ if [ $SKIP_COM -eq 0 ]; then
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_RAM.v"                                                  -work RAM                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_LED_Hour_Tens.v"                                        -work LED_Hour_Tens                        
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_JTAG.v"                                                 -work JTAG                                 
+  vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_Input_Timer.v"                                          -work Input_Timer                          
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_CPU.v"                                                  -work CPU                                  
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_Buzzer.v"                                               -work Buzzer                               
   vlogan +v2k $USER_DEFINED_VERILOG_COMPILE_OPTIONS $USER_DEFINED_COMPILE_OPTIONS           "$QSYS_SIMDIR/submodules/cpu_BTN_Edit.v"                                             -work BTN_Edit                             

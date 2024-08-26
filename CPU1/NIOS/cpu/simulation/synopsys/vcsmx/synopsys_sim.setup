@@ -30,6 +30,7 @@ SW_States:                             ./libraries/SW_States/
 RAM:                                   ./libraries/RAM/                                  
 LED_Hour_Tens:                         ./libraries/LED_Hour_Tens/                        
 JTAG:                                  ./libraries/JTAG/                                 
+Input_Timer:                           ./libraries/Input_Timer/                          
 CPU:                                   ./libraries/CPU/                                  
 Buzzer:                                ./libraries/Buzzer/                               
 BTN_Edit:                              ./libraries/BTN_Edit/                             

@@ -1,18 +1,19 @@
-# system info cpu on 2024.08.18.15:04:45
+# system info cpu on 2024.08.25.18:59:23
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1724018659
+GENERATION_ID,1724637534
 #
 #
-# Files generated for cpu on 2024.08.18.15:04:45
+# Files generated for cpu on 2024.08.25.18:59:23
 files:
 filepath,kind,attributes,module,is_top
 simulation/cpu.v,VERILOG,,cpu,true
 simulation/submodules/cpu_BTN_Edit.v,VERILOG,,cpu_BTN_Edit,false
 simulation/submodules/cpu_Buzzer.v,VERILOG,,cpu_Buzzer,false
 simulation/submodules/cpu_CPU.v,VERILOG,,cpu_CPU,false
+simulation/submodules/cpu_Input_Timer.v,VERILOG,,cpu_Input_Timer,false
 simulation/submodules/cpu_JTAG.v,VERILOG,,cpu_JTAG,false
 simulation/submodules/cpu_LED_Hour_Tens.v,VERILOG,,cpu_LED_Hour_Tens,false
 simulation/submodules/cpu_RAM.hex,HEX,,cpu_RAM,false
@@ -72,6 +73,7 @@ cpu.BTN_Edit,cpu_BTN_Edit
 cpu.Buzzer,cpu_Buzzer
 cpu.CPU,cpu_CPU
 cpu.CPU.cpu,cpu_CPU_cpu
+cpu.Input_Timer,cpu_Input_Timer
 cpu.JTAG,cpu_JTAG
 cpu.LED_Hour_Tens,cpu_LED_Hour_Tens
 cpu.LED_Hour_Units,cpu_LED_Hour_Tens
@@ -98,6 +100,7 @@ cpu.mm_interconnect_0.LED_Minutes_Units_s1_translator,altera_merlin_slave_transl
 cpu.mm_interconnect_0.BTN_Edit_s1_translator,altera_merlin_slave_translator
 cpu.mm_interconnect_0.SW_States_s1_translator,altera_merlin_slave_translator
 cpu.mm_interconnect_0.Buzzer_s1_translator,altera_merlin_slave_translator
+cpu.mm_interconnect_0.Input_Timer_s1_translator,altera_merlin_slave_translator
 cpu.mm_interconnect_0.CPU_data_master_agent,altera_merlin_master_agent
 cpu.mm_interconnect_0.CPU_instruction_master_agent,altera_merlin_master_agent
 cpu.mm_interconnect_0.JTAG_avalon_jtag_slave_agent,altera_merlin_slave_agent
@@ -113,6 +116,7 @@ cpu.mm_interconnect_0.LED_Minutes_Units_s1_agent,altera_merlin_slave_agent
 cpu.mm_interconnect_0.BTN_Edit_s1_agent,altera_merlin_slave_agent
 cpu.mm_interconnect_0.SW_States_s1_agent,altera_merlin_slave_agent
 cpu.mm_interconnect_0.Buzzer_s1_agent,altera_merlin_slave_agent
+cpu.mm_interconnect_0.Input_Timer_s1_agent,altera_merlin_slave_agent
 cpu.mm_interconnect_0.JTAG_avalon_jtag_slave_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.CPU_debug_mem_slave_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.RAM_s1_agent_rsp_fifo,altera_avalon_sc_fifo
@@ -126,6 +130,7 @@ cpu.mm_interconnect_0.LED_Minutes_Units_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.BTN_Edit_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.SW_States_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.Buzzer_s1_agent_rsp_fifo,altera_avalon_sc_fifo
+cpu.mm_interconnect_0.Input_Timer_s1_agent_rsp_fifo,altera_avalon_sc_fifo
 cpu.mm_interconnect_0.router,cpu_mm_interconnect_0_router
 cpu.mm_interconnect_0.router_001,cpu_mm_interconnect_0_router_001
 cpu.mm_interconnect_0.router_002,cpu_mm_interconnect_0_router_002
@@ -141,6 +146,7 @@ cpu.mm_interconnect_0.router_011,cpu_mm_interconnect_0_router_005
 cpu.mm_interconnect_0.router_012,cpu_mm_interconnect_0_router_005
 cpu.mm_interconnect_0.router_013,cpu_mm_interconnect_0_router_005
 cpu.mm_interconnect_0.router_014,cpu_mm_interconnect_0_router_005
+cpu.mm_interconnect_0.router_015,cpu_mm_interconnect_0_router_005
 cpu.mm_interconnect_0.cmd_demux,cpu_mm_interconnect_0_cmd_demux
 cpu.mm_interconnect_0.cmd_demux_001,cpu_mm_interconnect_0_cmd_demux_001
 cpu.mm_interconnect_0.cmd_mux,cpu_mm_interconnect_0_cmd_mux
@@ -156,6 +162,7 @@ cpu.mm_interconnect_0.cmd_mux_009,cpu_mm_interconnect_0_cmd_mux_003
 cpu.mm_interconnect_0.cmd_mux_010,cpu_mm_interconnect_0_cmd_mux_003
 cpu.mm_interconnect_0.cmd_mux_011,cpu_mm_interconnect_0_cmd_mux_003
 cpu.mm_interconnect_0.cmd_mux_012,cpu_mm_interconnect_0_cmd_mux_003
+cpu.mm_interconnect_0.cmd_mux_013,cpu_mm_interconnect_0_cmd_mux_003
 cpu.mm_interconnect_0.rsp_demux,cpu_mm_interconnect_0_rsp_demux
 cpu.mm_interconnect_0.rsp_demux_001,cpu_mm_interconnect_0_rsp_demux
 cpu.mm_interconnect_0.rsp_demux_002,cpu_mm_interconnect_0_rsp_demux
@@ -169,6 +176,7 @@ cpu.mm_interconnect_0.rsp_demux_009,cpu_mm_interconnect_0_rsp_demux_003
 cpu.mm_interconnect_0.rsp_demux_010,cpu_mm_interconnect_0_rsp_demux_003
 cpu.mm_interconnect_0.rsp_demux_011,cpu_mm_interconnect_0_rsp_demux_003
 cpu.mm_interconnect_0.rsp_demux_012,cpu_mm_interconnect_0_rsp_demux_003
+cpu.mm_interconnect_0.rsp_demux_013,cpu_mm_interconnect_0_rsp_demux_003
 cpu.mm_interconnect_0.rsp_mux,cpu_mm_interconnect_0_rsp_mux
 cpu.mm_interconnect_0.rsp_mux_001,cpu_mm_interconnect_0_rsp_mux_001
 cpu.mm_interconnect_0.avalon_st_adapter,cpu_mm_interconnect_0_avalon_st_adapter
@@ -197,5 +205,7 @@ cpu.mm_interconnect_0.avalon_st_adapter_011,cpu_mm_interconnect_0_avalon_st_adap
 cpu.mm_interconnect_0.avalon_st_adapter_011.error_adapter_0,cpu_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 cpu.mm_interconnect_0.avalon_st_adapter_012,cpu_mm_interconnect_0_avalon_st_adapter
 cpu.mm_interconnect_0.avalon_st_adapter_012.error_adapter_0,cpu_mm_interconnect_0_avalon_st_adapter_error_adapter_0
+cpu.mm_interconnect_0.avalon_st_adapter_013,cpu_mm_interconnect_0_avalon_st_adapter
+cpu.mm_interconnect_0.avalon_st_adapter_013.error_adapter_0,cpu_mm_interconnect_0_avalon_st_adapter_error_adapter_0
 cpu.irq_mapper,cpu_irq_mapper
 cpu.rst_controller,altera_reset_controller

@@ -95,10 +95,16 @@ module cpu (
 	wire   [1:0] mm_interconnect_0_buzzer_s1_address;                  // mm_interconnect_0:Buzzer_s1_address -> Buzzer:address
 	wire         mm_interconnect_0_buzzer_s1_write;                    // mm_interconnect_0:Buzzer_s1_write -> Buzzer:write_n
 	wire  [31:0] mm_interconnect_0_buzzer_s1_writedata;                // mm_interconnect_0:Buzzer_s1_writedata -> Buzzer:writedata
+	wire         mm_interconnect_0_input_timer_s1_chipselect;          // mm_interconnect_0:Input_Timer_s1_chipselect -> Input_Timer:chipselect
+	wire  [15:0] mm_interconnect_0_input_timer_s1_readdata;            // Input_Timer:readdata -> mm_interconnect_0:Input_Timer_s1_readdata
+	wire   [2:0] mm_interconnect_0_input_timer_s1_address;             // mm_interconnect_0:Input_Timer_s1_address -> Input_Timer:address
+	wire         mm_interconnect_0_input_timer_s1_write;               // mm_interconnect_0:Input_Timer_s1_write -> Input_Timer:write_n
+	wire  [15:0] mm_interconnect_0_input_timer_s1_writedata;           // mm_interconnect_0:Input_Timer_s1_writedata -> Input_Timer:writedata
 	wire         irq_mapper_receiver0_irq;                             // JTAG:av_irq -> irq_mapper:receiver0_irq
 	wire         irq_mapper_receiver1_irq;                             // timer:irq -> irq_mapper:receiver1_irq
+	wire         irq_mapper_receiver2_irq;                             // Input_Timer:irq -> irq_mapper:receiver2_irq
 	wire  [31:0] cpu_irq_irq;                                          // irq_mapper:sender_irq -> CPU:irq
-	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [BTN_Edit:reset_n, Buzzer:reset_n, CPU:reset_n, JTAG:rst_n, LED_Hour_Tens:reset_n, LED_Hour_Units:reset_n, LED_Minutes_Tens:reset_n, LED_Minutes_Units:reset_n, LED_Seconds_Tens:reset_n, LED_Seconds_Units:reset_n, RAM:reset, SW_States:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
+	wire         rst_controller_reset_out_reset;                       // rst_controller:reset_out -> [BTN_Edit:reset_n, Buzzer:reset_n, CPU:reset_n, Input_Timer:reset_n, JTAG:rst_n, LED_Hour_Tens:reset_n, LED_Hour_Units:reset_n, LED_Minutes_Tens:reset_n, LED_Minutes_Units:reset_n, LED_Seconds_Tens:reset_n, LED_Seconds_Units:reset_n, RAM:reset, SW_States:reset_n, irq_mapper:reset, mm_interconnect_0:CPU_reset_reset_bridge_in_reset_reset, rst_translator:in_reset, timer:reset_n]
 	wire         rst_controller_reset_out_reset_req;                   // rst_controller:reset_req -> [CPU:reset_req, RAM:reset_req, rst_translator:reset_req_in]
 
 	cpu_BTN_Edit btn_edit (
@@ -147,6 +153,17 @@ module cpu (
 		.debug_mem_slave_write               (mm_interconnect_0_cpu_debug_mem_slave_write),       //                          .write
 		.debug_mem_slave_writedata           (mm_interconnect_0_cpu_debug_mem_slave_writedata),   //                          .writedata
 		.dummy_ci_port                       ()                                                   // custom_instruction_master.readra
+	);
+
+	cpu_Input_Timer input_timer (
+		.clk        (clk_clk),                                     //   clk.clk
+		.reset_n    (~rst_controller_reset_out_reset),             // reset.reset_n
+		.address    (mm_interconnect_0_input_timer_s1_address),    //    s1.address
+		.writedata  (mm_interconnect_0_input_timer_s1_writedata),  //      .writedata
+		.readdata   (mm_interconnect_0_input_timer_s1_readdata),   //      .readdata
+		.chipselect (mm_interconnect_0_input_timer_s1_chipselect), //      .chipselect
+		.write_n    (~mm_interconnect_0_input_timer_s1_write),     //      .write_n
+		.irq        (irq_mapper_receiver2_irq)                     //   irq.irq
 	);
 
 	cpu_JTAG jtag (
@@ -291,6 +308,11 @@ module cpu (
 		.CPU_debug_mem_slave_byteenable        (mm_interconnect_0_cpu_debug_mem_slave_byteenable),     //                                .byteenable
 		.CPU_debug_mem_slave_waitrequest       (mm_interconnect_0_cpu_debug_mem_slave_waitrequest),    //                                .waitrequest
 		.CPU_debug_mem_slave_debugaccess       (mm_interconnect_0_cpu_debug_mem_slave_debugaccess),    //                                .debugaccess
+		.Input_Timer_s1_address                (mm_interconnect_0_input_timer_s1_address),             //                  Input_Timer_s1.address
+		.Input_Timer_s1_write                  (mm_interconnect_0_input_timer_s1_write),               //                                .write
+		.Input_Timer_s1_readdata               (mm_interconnect_0_input_timer_s1_readdata),            //                                .readdata
+		.Input_Timer_s1_writedata              (mm_interconnect_0_input_timer_s1_writedata),           //                                .writedata
+		.Input_Timer_s1_chipselect             (mm_interconnect_0_input_timer_s1_chipselect),          //                                .chipselect
 		.JTAG_avalon_jtag_slave_address        (mm_interconnect_0_jtag_avalon_jtag_slave_address),     //          JTAG_avalon_jtag_slave.address
 		.JTAG_avalon_jtag_slave_write          (mm_interconnect_0_jtag_avalon_jtag_slave_write),       //                                .write
 		.JTAG_avalon_jtag_slave_read           (mm_interconnect_0_jtag_avalon_jtag_slave_read),        //                                .read
@@ -349,6 +371,7 @@ module cpu (
 		.reset         (rst_controller_reset_out_reset), // clk_reset.reset
 		.receiver0_irq (irq_mapper_receiver0_irq),       // receiver0.irq
 		.receiver1_irq (irq_mapper_receiver1_irq),       // receiver1.irq
+		.receiver2_irq (irq_mapper_receiver2_irq),       // receiver2.irq
 		.sender_irq    (cpu_irq_irq)                     //    sender.irq
 	);
 

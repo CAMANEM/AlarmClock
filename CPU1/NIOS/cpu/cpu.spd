@@ -192,6 +192,10 @@
    type="VERILOG"
    library="LED_Hour_Tens" />
  <file path="simulation/submodules/cpu_JTAG.v" type="VERILOG" library="JTAG" />
+ <file
+   path="simulation/submodules/cpu_Input_Timer.v"
+   type="VERILOG"
+   library="Input_Timer" />
  <file path="simulation/submodules/cpu_CPU.v" type="VERILOG" library="CPU" />
  <file
    path="simulation/submodules/cpu_Buzzer.v"
