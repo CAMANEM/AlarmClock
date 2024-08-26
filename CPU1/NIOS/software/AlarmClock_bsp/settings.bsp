@@ -2,8 +2,8 @@
 <sch:Settings xmlns:sch="http://www.altera.com/embeddedsw/bsp/schema">
         <BspType>hal</BspType>
         <BspVersion>default</BspVersion>
-        <BspGeneratedTimeStamp>25/08/2024 07:17:36 PM</BspGeneratedTimeStamp>
-        <BspGeneratedUnixTimeStamp>1724638656956</BspGeneratedUnixTimeStamp>
+        <BspGeneratedTimeStamp>25/08/2024 09:06:44 PM</BspGeneratedTimeStamp>
+        <BspGeneratedUnixTimeStamp>1724645204445</BspGeneratedUnixTimeStamp>
         <BspGeneratedLocation>C:\Users\caman\Documents\Repos\AlarmClock\CPU1\NIOS\software\AlarmClock_bsp</BspGeneratedLocation>
         <BspSettingsFile>.\settings.bsp</BspSettingsFile>
         <SopcDesignFile>..\..\cpu.sopcinfo</SopcDesignFile>

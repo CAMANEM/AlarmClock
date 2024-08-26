@@ -33,7 +33,6 @@ DEFINE rst_controller                        ./libraries/rst_controller/
 DEFINE irq_mapper                            ./libraries/irq_mapper/                           
 DEFINE mm_interconnect_0                     ./libraries/mm_interconnect_0/                    
 DEFINE timer                                 ./libraries/timer/                                
-DEFINE SW_States                             ./libraries/SW_States/                            
 DEFINE RAM                                   ./libraries/RAM/                                  
 DEFINE LED_Hour_Tens                         ./libraries/LED_Hour_Tens/                        
 DEFINE JTAG                                  ./libraries/JTAG/                                 

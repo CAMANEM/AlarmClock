@@ -321,7 +321,7 @@
   <parameter name="resetValue" value="0" />
   <parameter name="simDoTestBenchWiring" value="false" />
   <parameter name="simDrivenValue" value="0" />
-  <parameter name="width" value="2" />
+  <parameter name="width" value="3" />
  </module>
  <module name="Buzzer" kind="altera_avalon_pio" version="18.1" enabled="1">
   <parameter name="bitClearingEdgeCapReg" value="false" />
@@ -894,13 +894,13 @@
  <connection kind="clock" version="18.1" start="clk_0.clk" end="Input_Timer.clk" />
  <connection kind="clock" version="18.1" start="clk_0.clk" end="RAM.clk1" />
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="JTAG.irq">
-  <parameter name="irqNumber" value="1" />
+  <parameter name="irqNumber" value="2" />
  </connection>
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="timer.irq">
-  <parameter name="irqNumber" value="0" />
+  <parameter name="irqNumber" value="1" />
  </connection>
  <connection kind="interrupt" version="18.1" start="CPU.irq" end="Input_Timer.irq">
-  <parameter name="irqNumber" value="2" />
+  <parameter name="irqNumber" value="0" />
  </connection>
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="CPU.reset" />
  <connection kind="reset" version="18.1" start="clk_0.clk_reset" end="JTAG.reset" />

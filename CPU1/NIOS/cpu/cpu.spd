@@ -181,10 +181,6 @@
    path="simulation/submodules/cpu_timer.v"
    type="VERILOG"
    library="timer" />
- <file
-   path="simulation/submodules/cpu_SW_States.v"
-   type="VERILOG"
-   library="SW_States" />
  <file path="simulation/submodules/cpu_RAM.hex" type="HEX" library="RAM" />
  <file path="simulation/submodules/cpu_RAM.v" type="VERILOG" library="RAM" />
  <file

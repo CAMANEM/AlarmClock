@@ -12,7 +12,7 @@ module cpu (
 	reset_reset_n,
 	sw_states_export);	
 
-	input	[1:0]	btn_edit_export;
+	input	[2:0]	btn_edit_export;
 	output		buzzer_export;
 	input		clk_clk;
 	output	[6:0]	led_hour_tens_export;

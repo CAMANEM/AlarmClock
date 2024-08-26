@@ -196,6 +196,10 @@
 					"strict" : false
 				},
 				{
+					"name" : "btn_edit[2]",
+					"strict" : false
+				},
+				{
 					"name" : "sw_states[2]",
 					"strict" : false
 				},

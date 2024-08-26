@@ -4,7 +4,7 @@
 
 `timescale 1 ps / 1 ps
 module cpu (
-		input  wire [1:0] btn_edit_export,          //          btn_edit.export
+		input  wire [2:0] btn_edit_export,          //          btn_edit.export
 		output wire       buzzer_export,            //            buzzer.export
 		input  wire       clk_clk,                  //               clk.clk
 		output wire [6:0] led_hour_tens_export,     //     led_hour_tens.export
@@ -259,7 +259,7 @@ module cpu (
 		.freeze     (1'b0)                                 // (terminated)
 	);
 
-	cpu_SW_States sw_states (
+	cpu_BTN_Edit sw_states (
 		.clk      (clk_clk),                                 //                 clk.clk
 		.reset_n  (~rst_controller_reset_out_reset),         //               reset.reset_n
 		.address  (mm_interconnect_0_sw_states_s1_address),  //                  s1.address

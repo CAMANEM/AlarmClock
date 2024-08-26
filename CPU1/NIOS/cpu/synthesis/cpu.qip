@@ -2,7 +2,7 @@ set_global_assignment -entity "cpu" -library "cpu" -name IP_TOOL_NAME "Qsys"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -library "cpu" -name SOPCINFO_FILE [file join $::quartus(qip_path) "../../cpu.sopcinfo"]
-set_global_assignment -entity "cpu" -library "cpu" -name SLD_INFO "QSYS_NAME cpu HAS_SOPCINFO 1 GENERATION_ID 1724637567"
+set_global_assignment -entity "cpu" -library "cpu" -name SLD_INFO "QSYS_NAME cpu HAS_SOPCINFO 1 GENERATION_ID 1724644658"
 set_global_assignment -library "cpu" -name MISC_FILE [file join $::quartus(qip_path) "../cpu.cmp"]
 set_global_assignment -library "cpu" -name SLD_FILE [file join $::quartus(qip_path) "cpu.regmap"]
 set_global_assignment -library "cpu" -name SLD_FILE [file join $::quartus(qip_path) "cpu.debuginfo"]
@@ -16,7 +16,7 @@ set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_DISPLAY_NA
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_REPORT_HIERARCHY "On"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_INTERNAL "Off"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_VERSION "MS4w"
-set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTcyNDYzNzU2Nw==::QXV0byBHRU5FUkFUSU9OX0lE"
+set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19HRU5FUkFUSU9OX0lE::MTcyNDY0NDY1OA==::QXV0byBHRU5FUkFUSU9OX0lE"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0U=::NUNTRU1BNUYzMUM2::QXV0byBERVZJQ0U="
 set_global_assignment -entity "cpu" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfU1BFRURHUkFERQ==::Ng==::QXV0byBERVZJQ0VfU1BFRURHUkFERQ=="
@@ -64,7 +64,7 @@ set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT
 set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_DESCRIPTION "Q29udmVydHMgaW5kaXZpZHVhbCBpbnRlcnJ1cHQgd2lyZXMgdG8gYSBidXMuIEJ5IGRlZmF1bHQsIHRoZSBpbnRlcnJ1cHQgc2VuZGVyIGNvbm5lY3RlZCB0byB0aGUgcmVjZWl2ZXIwIGludGVyZmFjZSBvZiB0aGUgSVJRIG1hcHBlciBpcyB0aGUgaGlnaGVzdCBwcmlvcml0eSB3aXRoIHNlcXVlbnRpYWwgcmVjZWl2ZXJzIGJlaWluZyBzdWNjZXNzaXZlbHkgbG93ZXIgcHJpb3JpdHku"
 set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_PARAMETER "TlVNX1JDVlJT::Mw==::TnVtYmVyIG9mIHJlY2VpdmVycw=="
 set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_PARAMETER "U0VOREVSX0lSUV9XSURUSA==::MzI=::U2VuZGVyIGludGVycnVwdCB3aWR0aA=="
-set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_PARAMETER "SVJRX01BUA==::MDoxLDE6MCwyOjI=::SVJRIG1hcA=="
+set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_PARAMETER "SVJRX01BUA==::MDoyLDE6MSwyOjA=::SVJRIG1hcA=="
 set_global_assignment -entity "cpu_irq_mapper" -library "cpu" -name IP_COMPONENT_PARAMETER "QVVUT19ERVZJQ0VfRkFNSUxZ::Q3ljbG9uZSBW::QXV0byBERVZJQ0VfRkFNSUxZ"
 set_global_assignment -entity "cpu_mm_interconnect_0" -library "cpu" -name IP_COMPONENT_NAME "Y3B1X21tX2ludGVyY29ubmVjdF8w"
 set_global_assignment -entity "cpu_mm_interconnect_0" -library "cpu" -name IP_COMPONENT_DISPLAY_NAME "TU0gSW50ZXJjb25uZWN0"
@@ -643,26 +643,6 @@ set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_COMPONENT_PARA
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_COMPONENT_PARAMETER "bXVsdA==::MS4w::bXVsdA=="
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_COMPONENT_PARAMETER "dGlja3NQZXJTZWM=::MS4w::dGlja3NQZXJTZWM="
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_COMPONENT_PARAMETER "c2xhdmVfYWRkcmVzc193aWR0aA==::Mw==::c2xhdmVfYWRkcmVzc193aWR0aA=="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_NAME "Y3B1X1NXX1N0YXRlcw=="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_DISPLAY_NAME "UElPIChQYXJhbGxlbCBJL08pIEludGVsIEZQR0EgSVA="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_INTERNAL "Off"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_AUTHOR "SW50ZWwgQ29ycG9yYXRpb24="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_VERSION "MTguMQ=="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "Y2FwdHVyZUVkZ2U=::ZmFsc2U=::U3luY2hyb25vdXNseSBjYXB0dXJl"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGlyZWN0aW9u::SW5wdXQ=::RGlyZWN0aW9u"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "Z2VuZXJhdGVJUlE=::ZmFsc2U=::R2VuZXJhdGUgSVJR"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "c2ltRG9UZXN0QmVuY2hXaXJpbmc=::ZmFsc2U=::SGFyZHdpcmUgUElPIGlucHV0cyBpbiB0ZXN0IGJlbmNo"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "d2lkdGg=::Mw==::V2lkdGggKDEtMzIgYml0cyk="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "Y2xvY2tSYXRl::NTAwMDAwMDA=::Y2xvY2tSYXRl"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfdHJp::ZmFsc2U=::ZGVyaXZlZF9oYXNfdHJp"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfb3V0::ZmFsc2U=::ZGVyaXZlZF9oYXNfb3V0"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaW4=::dHJ1ZQ==::ZGVyaXZlZF9oYXNfaW4="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9kb190ZXN0X2JlbmNoX3dpcmluZw==::ZmFsc2U=::ZGVyaXZlZF9kb190ZXN0X2JlbmNoX3dpcmluZw=="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9jYXB0dXJl::ZmFsc2U=::ZGVyaXZlZF9jYXB0dXJl"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9lZGdlX3R5cGU=::Tk9ORQ==::ZGVyaXZlZF9lZGdlX3R5cGU="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9pcnFfdHlwZQ==::Tk9ORQ==::ZGVyaXZlZF9pcnFfdHlwZQ=="
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfaXJx::ZmFsc2U=::ZGVyaXZlZF9oYXNfaXJx"
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_COMPONENT_NAME "Y3B1X1JBTQ=="
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_COMPONENT_DISPLAY_NAME "T24tQ2hpcCBNZW1vcnkgKFJBTSBvciBST00pIEludGVsIEZQR0EgSVA="
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_COMPONENT_REPORT_HIERARCHY "Off"
@@ -1110,7 +1090,7 @@ set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_P
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGlyZWN0aW9u::SW5wdXQ=::RGlyZWN0aW9u"
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "Z2VuZXJhdGVJUlE=::ZmFsc2U=::R2VuZXJhdGUgSVJR"
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "c2ltRG9UZXN0QmVuY2hXaXJpbmc=::ZmFsc2U=::SGFyZHdpcmUgUElPIGlucHV0cyBpbiB0ZXN0IGJlbmNo"
-set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "d2lkdGg=::Mg==::V2lkdGggKDEtMzIgYml0cyk="
+set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "d2lkdGg=::Mw==::V2lkdGggKDEtMzIgYml0cyk="
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "Y2xvY2tSYXRl::NTAwMDAwMDA=::Y2xvY2tSYXRl"
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfdHJp::ZmFsc2U=::ZGVyaXZlZF9oYXNfdHJp"
 set_global_assignment -entity "cpu_BTN_Edit" -library "cpu" -name IP_COMPONENT_PARAMETER "ZGVyaXZlZF9oYXNfb3V0::ZmFsc2U=::ZGVyaXZlZF9oYXNfb3V0"
@@ -1149,7 +1129,6 @@ set_global_assignment -library "cpu" -name SYSTEMVERILOG_FILE [file join $::quar
 set_global_assignment -library "cpu" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_slave_translator.sv"]
 set_global_assignment -library "cpu" -name SYSTEMVERILOG_FILE [file join $::quartus(qip_path) "submodules/altera_merlin_master_translator.sv"]
 set_global_assignment -library "cpu" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/cpu_timer.v"]
-set_global_assignment -library "cpu" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/cpu_SW_States.v"]
 set_global_assignment -library "cpu" -name SOURCE_FILE [file join $::quartus(qip_path) "submodules/cpu_RAM.hex"]
 set_global_assignment -library "cpu" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/cpu_RAM.v"]
 set_global_assignment -library "cpu" -name VERILOG_FILE [file join $::quartus(qip_path) "submodules/cpu_LED_Hour_Tens.v"]
@@ -1237,9 +1216,6 @@ set_global_assignment -entity "altera_merlin_master_translator" -library "cpu" -
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_TOOL_NAME "altera_avalon_timer"
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "cpu_timer" -library "cpu" -name IP_TOOL_ENV "Qsys"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_TOOL_NAME "altera_avalon_pio"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_TOOL_VERSION "18.1"
-set_global_assignment -entity "cpu_SW_States" -library "cpu" -name IP_TOOL_ENV "Qsys"
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_TOOL_NAME "altera_avalon_onchip_memory2"
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_TOOL_VERSION "18.1"
 set_global_assignment -entity "cpu_RAM" -library "cpu" -name IP_TOOL_ENV "Qsys"

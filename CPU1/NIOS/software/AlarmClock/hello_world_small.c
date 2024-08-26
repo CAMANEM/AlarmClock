@@ -7,20 +7,21 @@
 #include "io.h" // Necesario para IORD y IOWR
 #include <stdbool.h>
 
-int clkTime = 235950; // hora de reloj en formato HHMMSS
+int clkTime = 000000; // hora de reloj en formato HHMMSS
 int alarmTime = 0; // hora de alarma en formato HHMMSS
 short select = 0; // seleccion de ajuste 0: segundos, 1: minutos, 2: hora
 bool ringing = false;
+bool blinkOn = false;
 
-volatile unsigned short *led_seconds_units = (unsigned short *) 0x30c0;
-volatile unsigned short *led_seconds_tens = (unsigned short *) 0x30b0;
-volatile unsigned short *led_minutes_units = (unsigned short *) 0x3070;
-volatile unsigned short *led_minutes_tens = (unsigned short *) 0x30a0;
-volatile unsigned short *led_hour_units = (unsigned short *) 0x3090;
-volatile unsigned short *led_hour_tens = (unsigned short *) 0x3080;
-volatile unsigned short *sw_state = (unsigned short *) 0x3050;
-volatile unsigned short *btn_state = (unsigned short *) 0x3060;
-volatile unsigned short *buzzer = (unsigned short *) 0x3040;
+volatile unsigned short *led_seconds_units = (unsigned short *) LED_SECONDS_UNITS_BASE;
+volatile unsigned short *led_seconds_tens = (unsigned short *) LED_SECONDS_TENS_BASE;
+volatile unsigned short *led_minutes_units = (unsigned short *) LED_MINUTES_UNITS_BASE;
+volatile unsigned short *led_minutes_tens = (unsigned short *) LED_MINUTES_TENS_BASE;
+volatile unsigned short *led_hour_units = (unsigned short *) LED_HOUR_UNITS_BASE;
+volatile unsigned short *led_hour_tens = (unsigned short *) LED_HOUR_TENS_BASE;
+volatile unsigned short *sw_state = (unsigned short *) SW_STATES_BASE;
+volatile unsigned short *btn_state = (unsigned short *) BTN_EDIT_BASE;
+volatile unsigned short *buzzer = (unsigned short *) BUZZER_BASE;
 
 void initTimerInterrupt();
 void initInputTimerInterrupt();
@@ -44,6 +45,7 @@ void increaseHour(int *time);
 void increaseMinutes(int *time);
 void increaseSeconds(int *time);
 void displayTime(int *time);
+void blinking();
 
 // Función para convertir segundos en el valor de LEDs
 unsigned short get_led_value(short sec) {
@@ -58,6 +60,7 @@ unsigned short get_led_value(short sec) {
         case 7:  return 0b1111000;
         case 8:  return 0b0000000;
         case 9:  return 0b0010000;
+        case 10:  return 0b1111111;
         default: return 0b1000000;
     }
 }
@@ -120,13 +123,15 @@ void clkController()
 	// modo confuguracion de hora
 	if (switch0())
 	{
-		displayTime(&clkTime);
 		configMode(&clkTime);
+		displayTime(&clkTime);
+		blinking();
 	}
 	else if (switch1()) // modo congiguracion de alarma
 	{
-		displayTime(&alarmTime);
 		configMode(&alarmTime);
+		displayTime(&alarmTime);
+		blinking();
 	}
 
 }
@@ -310,6 +315,35 @@ void increaseSeconds(int *time) {
 		*time = (*time / 100) * 100 + ((getSeconds(time) + 1) % 60);
 	}
 }
+
+void blinking(){
+
+	if (blinkOn)
+	{
+		blinkOn = false;
+		switch (select)
+				{
+				        case 0:
+				        	*led_seconds_units = get_led_value(10); // apaga los segundos
+				        	*led_seconds_tens = get_led_value(10); // apaga los segundos
+				        	break;
+				        case 1:
+				        	*led_minutes_units = get_led_value(10); // apaga los minutos
+				        	*led_minutes_tens = get_led_value(10); // apaga los minutos
+				        	break;
+				        case 2:
+				        	*led_hour_units = get_led_value(10); // apaga las horas
+				        	*led_hour_tens = get_led_value(10); // apaga las horas
+				        	break;
+				}
+	}
+	else{
+		blinkOn = true;
+	}
+}
+
+
+
 
 
 

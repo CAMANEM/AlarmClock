@@ -1,12 +1,12 @@
-# system info cpu on 2024.08.25.18:59:23
+# system info cpu on 2024.08.25.20:57:35
 system_info:
 name,value
 DEVICE,5CSEMA5F31C6
 DEVICE_FAMILY,Cyclone V
-GENERATION_ID,1724637534
+GENERATION_ID,1724644629
 #
 #
-# Files generated for cpu on 2024.08.25.18:59:23
+# Files generated for cpu on 2024.08.25.20:57:35
 files:
 filepath,kind,attributes,module,is_top
 simulation/cpu.v,VERILOG,,cpu,true
@@ -18,7 +18,6 @@ simulation/submodules/cpu_JTAG.v,VERILOG,,cpu_JTAG,false
 simulation/submodules/cpu_LED_Hour_Tens.v,VERILOG,,cpu_LED_Hour_Tens,false
 simulation/submodules/cpu_RAM.hex,HEX,,cpu_RAM,false
 simulation/submodules/cpu_RAM.v,VERILOG,,cpu_RAM,false
-simulation/submodules/cpu_SW_States.v,VERILOG,,cpu_SW_States,false
 simulation/submodules/cpu_timer.v,VERILOG,,cpu_timer,false
 simulation/submodules/cpu_mm_interconnect_0.v,VERILOG,,cpu_mm_interconnect_0,false
 simulation/submodules/cpu_irq_mapper.sv,SYSTEM_VERILOG,,cpu_irq_mapper,false
@@ -70,6 +69,7 @@ simulation/submodules/cpu_mm_interconnect_0_avalon_st_adapter_error_adapter_0.sv
 instances:
 instancePath,module
 cpu.BTN_Edit,cpu_BTN_Edit
+cpu.SW_States,cpu_BTN_Edit
 cpu.Buzzer,cpu_Buzzer
 cpu.CPU,cpu_CPU
 cpu.CPU.cpu,cpu_CPU_cpu
@@ -82,7 +82,6 @@ cpu.LED_Minutes_Units,cpu_LED_Hour_Tens
 cpu.LED_Seconds_Tens,cpu_LED_Hour_Tens
 cpu.LED_Seconds_Units,cpu_LED_Hour_Tens
 cpu.RAM,cpu_RAM
-cpu.SW_States,cpu_SW_States
 cpu.timer,cpu_timer
 cpu.mm_interconnect_0,cpu_mm_interconnect_0
 cpu.mm_interconnect_0.CPU_data_master_translator,altera_merlin_master_translator

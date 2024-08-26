@@ -4,7 +4,7 @@
  * Machine generated for CPU 'CPU' in SOPC Builder design 'cpu'
  * SOPC Builder design path: ../../cpu.sopcinfo
  *
- * Generated: Sun Aug 25 19:17:38 PDT 2024
+ * Generated: Sun Aug 25 21:06:44 PDT 2024
  */
 
 /*
@@ -65,7 +65,7 @@
 #define BTN_EDIT_BIT_CLEARING_EDGE_REGISTER 0
 #define BTN_EDIT_BIT_MODIFYING_OUTPUT_REGISTER 0
 #define BTN_EDIT_CAPTURE 0
-#define BTN_EDIT_DATA_WIDTH 2
+#define BTN_EDIT_DATA_WIDTH 3
 #define BTN_EDIT_DO_TEST_BENCH_WIRING 0
 #define BTN_EDIT_DRIVEN_SIM_VALUE 0
 #define BTN_EDIT_EDGE_TYPE "NONE"
@@ -205,7 +205,7 @@
 #define INPUT_TIMER_COUNTER_SIZE 32
 #define INPUT_TIMER_FIXED_PERIOD 0
 #define INPUT_TIMER_FREQ 50000000
-#define INPUT_TIMER_IRQ 2
+#define INPUT_TIMER_IRQ 0
 #define INPUT_TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define INPUT_TIMER_LOAD_VALUE 9999999
 #define INPUT_TIMER_MULT 0.001
@@ -227,7 +227,7 @@
 
 #define ALT_MODULE_CLASS_JTAG altera_avalon_jtag_uart
 #define JTAG_BASE 0x30d8
-#define JTAG_IRQ 1
+#define JTAG_IRQ 2
 #define JTAG_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define JTAG_NAME "/dev/JTAG"
 #define JTAG_READ_DEPTH 64
@@ -514,7 +514,7 @@
 #define TIMER_COUNTER_SIZE 32
 #define TIMER_FIXED_PERIOD 0
 #define TIMER_FREQ 50000000
-#define TIMER_IRQ 0
+#define TIMER_IRQ 1
 #define TIMER_IRQ_INTERRUPT_CONTROLLER_ID 0
 #define TIMER_LOAD_VALUE 49999999
 #define TIMER_MULT 1.0

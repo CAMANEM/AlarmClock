@@ -1,4 +1,4 @@
-module cpu_inst(input clk, reset, input [2:0] sw_states, input [1:0] btn_edit, output [6:0] led_seconds_units, output [6:0] led_seconds_tens, output [6:0] led_minutes_units, output [6:0] led_minutes_tens, output [6:0] led_hour_units, output [6:0] led_hour_tens, output buzzer);
+module cpu_inst(input clk, reset, input [2:0] sw_states, input [2:0] btn_edit, output [6:0] led_seconds_units, output [6:0] led_seconds_tens, output [6:0] led_minutes_units, output [6:0] led_minutes_tens, output [6:0] led_hour_units, output [6:0] led_hour_tens, output buzzer);
 	cpu u0 (
 		.clk_clk                  (clk),                  //               clk.clk
 		.led_hour_tens_export     (led_hour_tens),     //     led_hour_tens.export
